@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <title>IIS 응답 거래 정보 등록</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.css">
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.js"></script>
+</head>
+
+<body>
+    <div class="wrapper pageclass">
+
+        <!-- skip -->
+
+        <div class="skip_nav">
+            <a href="#leftmenu" class="goto-menu">주메뉴 바로가기</a>
+            <a href="#container" class="goto-content">본문 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <!-- con-wrap -->
+        <div class="con-wrap">
+
+            <!-- gnb_left -->
+            <div class="left-area js-left_area open">
+                <div class="inner">
+                    <h1><a href="/"><img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank"></a></h1>
+                    <menu class="left-menu">
+                        <!--  [D] depth1 class: active-->
+                        <ul class="menu js-accordion_menu">
+                            <li class="depth1 m01">
+                                <a href="#n" class="menu_d1 js-acc_btn">대시보드</a>
+                            </li>
+                            <li class="depth1 m02">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 응답 거래</a>
+                                <ul class="depth2">
+                                    <li class="active"><a href="#n">전문포맷관리</a></li>
+                                    <li><a href="#n">정보조회</a></li>
+                                    <li><a href="#n">정보등록</a></li>
+                                    <li><a href="#n">로그조회</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1 m03">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 발신 거래</a>
+                            </li>
+                            <li class="depth1 m04">
+                                <a href="#n" class="menu_d1 js-acc_btn">게시판</a>
+                            </li>
+                            <li class="depth1 m05">
+                                <a href="#n" class="menu_d1 js-acc_btn">시스템 정보</a>
+                            </li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="menu_closed js-menu_closed">
+                    <button type="button"><span class="hidden">닫기</span></button>
+                </div>
+            </div>
+            <!-- //gnb_left -->
+
+            <div id="#container" class="container">
+                <!-- header -->
+
+
+                <div class="header-wrap">
+                    <header class="header">
+                        <div class="header-area">
+                            <div class="my-alram">
+                                <button type="button" class="alram-btn"><span class="txt">알림</span><span class="on"></span></button>
+                            </div>
+                            <div class="my-info">
+                                <button type="button" class="my-btn"><span class="my-name">홍길동</span><span class="my-num">(2*****)</span></button>
+                            </div>
+                            <div class="loginout"><button>로그아웃</button></div>
+                        </div>
+                    </header>
+
+                    <div class="page-title-wrap">
+
+                        <div class="inner">
+                            <h2 class="title"><span>IIS 응답 거래 정보 등록 </span></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //header -->
+
+                <div class="contents">
+                    <div class="contents-inner">
+                        <div class="content-box">
+
+                            <div class="title-area">
+                                <div class="inner">
+                                    <h3 class="title"><span>정보 등록</span></h3>
+                                    <p class="text">거래 요청이 당행에서 발생하는 시뮬레이션 테스트 정보 관리.</p>
+                                </div>
+                                <div class="btn-area">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="">신규</span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="">복제</span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="">내보내기</span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="">가져오기</span>
+                                    </button>
+                                    <button type="button" class="btn btn-dark">
+                                        <i class="i-menu"></i>
+                                        <span class="">리스트</span>
+                                    </button>
+                                    <button type="button" class="btn btn-dark">
+                                        <i class="i-trash"></i>
+                                        <span class="">삭제</span>
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <i class="i-save"></i>
+                                        <span class="">저장</span>
+                                    </button>
+                                </div>
+                            </div><!-- // title-area -->
+
+                            <!-- 기본 정보 -->
+                            <section class="edit-section">
+                                <div class="table-wrap">
+                                    <div class="table-header">
+
+                                        <div class="title-area">
+                                            <h4 class="title-h2">기본 정보</h4>
+                                        </div>
+
+                                    </div>
+                                    <div class="table-body">
+
+                                        <div class="search-box-wrap type2">
+                                            <div class="box-inner">
+                                                <form action="">
+                                                    <ul class="box-lists grid-2">
+                                                        <li class="item item">
+                                                            <div class="inner form-box">
+                                                                <label for="inp01" class="title">
+                                                                    인터페이스
+                                                                    <em class="require ml5"><span class="hidden">필수</span></em>
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="select-box">
+                                                                        <select class="select2Basic" id="">
+                                                                            <option value="" selected disabled>선택</option>
+                                                                            <option value="1">선택1</option>
+                                                                            <option value="2">선택2</option>
+                                                                            <option value="3">선택3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item item">
+                                                            <div class="inner form-box">
+                                                                <label for="inp02" class="title">
+                                                                    인터페이스(ID)
+                                                                    <em class="require ml5"><span class="hidden">필수</span></em>
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="input-box">
+                                                                        <input type="text" id="inp02" class="inp" value="" placeholder="인터페이스(ID)">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item item">
+                                                            <div class="inner form-box">
+                                                                <label for="inpDate" class="title">
+                                                                    시뮬레이션 기간
+                                                                    <em class="require ml5"><span class="hidden">필수</span></em>
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="date_set">
+                                                                        <span class="datepicker-box">
+                                                                            <input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" id="">
+                                                                        </span>
+                                                                        <span class="bar">-</span>
+                                                                        <span class="datepicker-box">
+                                                                            <input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" id="">
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp05" class="title">
+                                                                    인코딩
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="select-box">
+                                                                        <select class="select2Basic" id="">
+                                                                            <option value="" selected disabled>선택</option>
+                                                                            <option value="1">선택1</option>
+                                                                            <option value="2">선택2</option>
+                                                                            <option value="3">선택3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp09" class="title">
+                                                                    수신시스템
+                                                                    <em class="require ml5"><span class="hidden">필수</span></em>
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="select-box">
+                                                                        <select class="select2Basic" id="">
+                                                                            <option value="" selected disabled>선택</option>
+                                                                            <option value="1">선택1</option>
+                                                                            <option value="2">선택2</option>
+                                                                            <option value="3">선택3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp10" class="title">
+                                                                    결과 수신 시스템
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="select-box">
+                                                                        <select class="select2Basic" id="">
+                                                                            <option value="" selected disabled>선택</option>
+                                                                            <option value="1">선택1</option>
+                                                                            <option value="2">선택2</option>
+                                                                            <option value="3">선택3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item item">
+                                                            <div class="inner form-box">
+                                                                <label for="inp04" class="title">
+                                                                    결과 수신 프로토콜
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio11" name="radio1" checked class="radiobox">
+                                                                        <label for="inp-radio11"><span>HTTP</span></label>
+                                                                    </div>
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio12" name="radio1" class="radiobox">
+                                                                        <label for="inp-radio12"><span>TCP</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item item">
+                                                            <div class="inner form-box">
+                                                                <label for="inp06" class="title">
+                                                                    사용 여부
+                                                                    <em class="require"><span class="hidden">필수</span></em>
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio21" name="radio2" checked class="radiobox">
+                                                                        <label for="inp-radio21"><span>사용</span></label>
+                                                                    </div>
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio22" name="radio2" class="radiobox">
+                                                                        <label for="inp-radio22"><span>미사용</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp07" class="title">
+                                                                    암호화 대상(전문)
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio31" name="radio3" checked class="radiobox">
+                                                                        <label for="inp-radio31"><span>Y</span></label>
+                                                                    </div>
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio32" name="radio3" class="radiobox">
+                                                                        <label for="inp-radio32"><span>N</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp08" class="title">
+                                                                    응답 처리 방식
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio41" name="radio4" checked class="radiobox">
+                                                                        <label for="inp-radio41"><span>동기</span></label>
+                                                                    </div>
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio42" name="radio4" class="radiobox">
+                                                                        <label for="inp-radio42"><span>비동기</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp11" class="title">
+                                                                    응답 전문 형식
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio51" name="radio5" checked class="radiobox">
+                                                                        <label for="inp-radio51"><span>Flat</span></label>
+                                                                    </div>
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio52" name="radio5" class="radiobox">
+                                                                        <label for="inp-radio52"><span>Json</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 응답 전문 -->
+                            <section>
+                                <div class="text-box-wrap">
+                                    <div class="tabs-menu ">
+                                        <div class="tabs text-ty">
+                                            <p class="tab text">
+                                                응답 전문(샘플)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content text-box">
+                                        <div id="tab_3" class="tab-content_tiem active">
+                                            <div class="inner pd0 scroll-type scroll-sm" style="height: 150px;">
+                                                padding: 10px 12px;<br>
+                                                background-color: $white;<br>
+                                                border-radius: 4px;<br>
+                                                border: 1px solid #ddd;<br>
+                                                overflow-y: auto;<br>
+                                                padding: 10px 12px;<br>
+                                                background-color: $white;<br>
+                                                border-radius: 4px;<br>
+                                                border: 1px solid #ddd;<br>
+                                                overflow-y: auto;<br>
+                                                padding: 10px 12px;<br>
+                                                background-color: $white;<br>
+                                                border-radius: 4px;<br>
+                                                border: 1px solid #ddd;<br>
+                                                overflow-y: auto;<br>
+                                            </div>
+                                            <div class="btn-area jc-end">
+                                                <button type="button" class="btn btn-dark"><i class="i-branch"></i><span>입력</ㅇspan></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 공통부 -->
+                            <section>
+                                <div class="title-area">
+                                    <h4 class="title-h2">공통부</h4>
+                                </div>
+
+                                <div class="table-wrap type2">
+                                    <div class="table-header">
+
+                                        <div class="table-title-area">
+                                            <p class="table-title">RESPONSE</p>
+                                            <div class="btn-area">
+                                                <button type="button" class="btn btn-sm btn-default js-simulation_open-btn"><i class="i-filter"></i><span>시뮬레이션
+                                                        룰</span></button>
+                                                <button type="button" class="btn btn-icon btn-default"><i class="i-max"></i><span class="hidden">버튼</span></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="table-body">
+
+                                        <div class="table-inner bd0">
+
+                                            <div class="gridlist_table">
+                                                <div id="grid2_1"></div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 개별부 -->
+                            <section>
+                                <div class="title-area">
+                                    <h4 class="title-h2">개별부</h4>
+                                </div>
+                                <div class="grid-type2">
+
+                                    <div class="table-wrap">
+                                        <div class="table-header">
+
+                                            <div class="table-title-area">
+                                                <p class="table-title">RESPONSE</p>
+                                                <div class="btn-area">
+                                                    <button type="button" class="btn btn-icon btn-default"><i class="i-plus"></i><span class="hidden">등록</span></button>
+                                                    <button type="button" class="btn btn-icon btn-default"><i class="i-minus"></i><span class="hidden">삭제</span></button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="table-body">
+
+                                            <div class="table-inner bd0">
+
+                                                <div class="gridlist_table">
+                                                    <div id="grid2_2"></div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="table-wrap type2">
+
+                                        <div class="table-wrap">
+                                            <div class="table-header">
+
+                                                <div class="table-title-area">
+                                                    <p class="table-title">RESPONSE</p>
+                                                    <div class="btn-area">
+                                                        <button type="button" class="btn btn-sm btn-default js-simulation_open-btn"><i class="i-filter"></i><span>시뮬레이션 룰</span></button>
+                                                        <button type="button" class="btn btn-icon btn-default"><i class="i-plus"></i><span class="hidden">등록</span></button>
+                                                        <button type="button" class="btn btn-icon btn-default"><i class="i-minus"></i><span class="hidden">삭제</span></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="table-body">
+
+                                                <div class="table-inner bd0">
+
+                                                    <div class="gridlist_table">
+                                                        <div id="grid2_3"></div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </section>
+
+                        </div><!-- // content-box -->
+                    </div>
+
+                    <!-- simulation -->
+                    <div class="simulation-wrap">
+                        <div class="simulation-inner scroll-type ">
+
+                            <div class="simulation-area">
+                                <h3>RESPONSE 시뮬레이션 룰</h3>
+                                <div class="simulation-from">
+                                    <form action="">
+                                        <ul class="lists">
+                                            <li class="item item">
+                                                <div class="inner form-box">
+                                                    <label for="inp01" class="title">기본값(상수)</label>
+                                                    <div class="form-wrap">
+                                                        <div class="input-box">
+                                                            <input type="text" id="inp01" class="inp" value="" placeholder="기본값">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="inner form-box">
+                                                    <label for="inp02" class="title">변환규칙</label>
+                                                    <div class="form-wrap">
+
+                                                        <div class="select-box">
+                                                            <select class="" id="">
+                                                                <option value="" selected disabled>변환규칙</option>
+                                                                <option value="1">COPY</option>
+                                                                <option value="2">NOT SET</option>
+                                                            </select>
+                                                            <i class="arrow"></i>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item item">
+                                                <div class="inner form-box">
+                                                    <label for="inp03" class="title">파라미터</label>
+                                                    <div class="form-wrap">
+                                                        <div class="input-box">
+                                                            <input type="text" id="inp03" class="inp" value="" placeholder="파라미터">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item ">
+                                                <div class="inner form-box">
+                                                    <label for="inp04" class="title">빈값 채우기</label>
+                                                    <div class="form-wrap">
+
+                                                        <div class="select-box">
+                                                            <select class="" id="">
+                                                                <option value="" selected disabled>선택</option>
+                                                                <option value="1">BLANK</option>
+                                                                <option value="2">0</option>
+                                                            </select>
+                                                            <i class="arrow"></i>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item ">
+                                                <div class="inner form-box">
+                                                    <label for="inp05" class="title">정렬</label>
+                                                    <div class="form-wrap">
+
+                                                        <div class="select-box">
+                                                            <select class="" id="">
+                                                                <option value="" selected disabled>선택</option>
+                                                                <option value="1">우측정열</option>
+                                                                <option value="2">좌측정열</option>
+                                                            </select>
+                                                            <i class="arrow"></i>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="check-area">
+                                            <div class="checkbox-wrap ">
+                                                <input type="checkbox" id="s-label1" class="checkbox">
+                                                <label for="s-label1"><span>암호화 대상(컬럼)</span></label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="closed-wrap">
+                                    <button type="button" class="s-closed js-simulation_close-btn"><span class="hidden">닫기</span></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!-- // simulation -->
+
+                </div>
+            </div><!-- //container -->
+
+        </div>
+        <!-- //con-wrap -->
+
+        <!-- footer -->
+
+
+        <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+        <script type="text/javascript" src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+        <script>
+            var grid2Data = [{
+                    id: '1',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+                {
+                    id: '2',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+                {
+                    id: '3',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+                {
+                    id: '4',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+                {
+                    id: '5',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+
+            ];
+            var grid2_1 = new tui.Grid({
+                el: document.getElementById('grid2_1'),
+                data: grid2Data,
+                rowHeight: 50,
+                scrollX: false,
+                scrollY: false,
+                //rowHeaders: ['rowNum'], // 좌측 넘버추가
+                //minBodyHeight: 30,
+                /* pageOptions: {
+                  useClient: true,
+                  perPage: 4
+                }, */
+                columns: [{
+                        header: '번호',
+                        name: 'id',
+                        align: "center",
+                        width: 80,
+                    },
+                    {
+                        header: '필드 명(영문)',
+                        name: 'field_en'
+                    },
+                    {
+                        header: '필드 명(한글)',
+                        name: 'field_kr'
+                    },
+                    {
+                        header: '유형',
+                        name: 'type',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '길이',
+                        name: 'length',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '입력',
+                        name: 'input',
+                        align: "center",
+                        width: 120,
+                    },
+                ]
+            });
+
+            var grid2_2 = new tui.Grid({
+                el: document.getElementById('grid2_2'),
+                data: grid2Data,
+                rowHeight: 50,
+                scrollX: false,
+                scrollY: false,
+                columns: [{
+                        header: '번호',
+                        name: 'id',
+                        align: "center",
+                        width: 80,
+                    },
+                    {
+                        header: '필드 명(영문)',
+                        name: 'field_en'
+                    },
+                    {
+                        header: '필드 명(한글)',
+                        name: 'field_kr'
+                    },
+                    {
+                        header: '유형',
+                        name: 'type',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '길이',
+                        name: 'length',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '입력',
+                        name: 'input',
+                        align: "center",
+                        width: 120,
+                    },
+                ]
+            });
+
+            var grid2_3 = new tui.Grid({
+                el: document.getElementById('grid2_3'),
+                data: grid2Data,
+                rowHeight: 50,
+                scrollX: false,
+                scrollY: false,
+                columns: [{
+                        header: '번호',
+                        name: 'id',
+                        align: "center",
+                        width: 80,
+                    },
+                    {
+                        header: '필드 명(영문)',
+                        name: 'field_en'
+                    },
+                    {
+                        header: '필드 명(한글)',
+                        name: 'field_kr'
+                    },
+                    {
+                        header: '유형',
+                        name: 'type',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '길이',
+                        name: 'length',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '입력',
+                        name: 'input',
+                        align: "center",
+                        width: 120,
+                    },
+                ]
+            });
+        </script>
+
+        <!-- simulation -->
+        <script>
+            var _simulationArea = $('.simulation-wrap');
+            var _closedBtn = _simulationArea.find('.js-simulation_close-btn');
+            var _openBtn = $('.js-simulation_open-btn');
+
+            _closedBtn.off().on('click', function(e) {
+                e.stopPropagation();
+                if ($(this).closest(".simulation-wrap").hasClass('active')) {
+                    $(this).closest(".simulation-wrap").removeClass('active')
+                    return false;
+                }
+            });
+            _openBtn.off().on('click', function(e) {
+                e.stopPropagation();
+                if (_simulationArea.not('.active')) {
+                    _simulationArea.addClass('active')
+                    // $(_openBtn).css('display', 'none');
+                    return false;
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <title>IIS 발신 거래 테스트</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.css">
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.js"></script>
+</head>
+
+<body>
+    <div class="wrapper pageclass">
+
+        <!-- skip -->
+
+        <div class="skip_nav">
+            <a href="#leftmenu" class="goto-menu">주메뉴 바로가기</a>
+            <a href="#container" class="goto-content">본문 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <!-- con-wrap -->
+        <div class="con-wrap">
+
+            <!-- gnb_left -->
+            <div class="left-area js-left_area open">
+                <div class="inner">
+                    <h1><a href="/"><img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank"></a></h1>
+                    <menu class="left-menu">
+                        <!--  [D] depth1 class: active-->
+                        <ul class="menu js-accordion_menu">
+                            <li class="depth1 m01">
+                                <a href="#n" class="menu_d1 js-acc_btn">대시보드</a>
+                            </li>
+                            <li class="depth1 m02">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 응답 거래</a>
+                                <ul class="depth2">
+                                    <li class="active"><a href="#n">전문포맷관리</a></li>
+                                    <li><a href="#n">정보조회</a></li>
+                                    <li><a href="#n">정보등록</a></li>
+                                    <li><a href="#n">로그조회</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1 m03">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 발신 거래</a>
+                            </li>
+                            <li class="depth1 m04">
+                                <a href="#n" class="menu_d1 js-acc_btn">게시판</a>
+                            </li>
+                            <li class="depth1 m05">
+                                <a href="#n" class="menu_d1 js-acc_btn">시스템관리</a>
+                            </li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="menu_closed js-menu_closed">
+                    <button type="button"><span class="hidden">닫기</span></button>
+                </div>
+            </div>
+            <!-- //gnb_left -->
+
+            <div id="#container" class="container">
+                <!-- header -->
+
+
+                <div class="header-wrap">
+                    <header class="header">
+                        <div class="header-area">
+                            <div class="my-alram">
+                                <button type="button" class="alram-btn"><span class="txt">알림</span><span class="on"></span></button>
+                            </div>
+                            <div class="my-info">
+                                <button type="button" class="my-btn"><span class="my-name">홍길동</span><span class="my-num">(2*****)</span></button>
+                            </div>
+                            <div class="loginout"><button>로그아웃</button></div>
+                        </div>
+                    </header>
+                    <div class="page-title-wrap">
+
+                        <div class="inner">
+                            <h2 class="title"><span>IIS 응답 거래 정보 등록 </span></h2>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- //header -->
+
+                <div class="contents">
+                    <div class="contents-inner">
+                        <div class="content-box">
+
+                            <div class="title-area">
+                                <div class="inner">
+                                    <h3 class="title"><span>IIS 발신 거래 테스트</span></h3>
+                                </div>
+                                <div class="btn-area">
+                                    <button type="button" class="btn btn-dark">
+                                        <i class="i-play2"></i>
+                                        <span class="">전송</span>
+                                    </button>
+                                </div>
+                            </div><!-- // title-area -->
+
+                            <section>
+                                <div class="tabcontrol-wrap">
+                                    <div class="tabs-menu pageTabs">
+                                        <ul class="tabs  ">
+                                            <li class="tab ">
+                                                <a href="otoc_info_rgst.html"><span>수신시스템 선택</span></a>
+                                            </li>
+                                            <li class="tab active">
+                                                <a href="#n"><span>주소입력</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="search-box-wrap type2">
+                                    <form action="">
+                                        <div class="box-inner">
+                                            <ul class="box-lists grid-1 wp50">
+                                                <li class="item">
+                                                    <div class="inner form-box">
+                                                        <label for="inp01" class="title">
+                                                            주소입력
+                                                        </label>
+                                                        <div class="form_set wp100">
+                                                            <div>
+
+                                                                <div class="select-box w100">
+                                                                    <select class="" id="">
+                                                                        <option value="1" selected>POST</option>
+                                                                        <option value="2">GET</option>
+                                                                    </select>
+                                                                    <i class="arrow"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="ml30 flex-grow">
+                                                                <div class="input-box">
+                                                                    <input type="text" id="inp01" class="inp" value="" placeholder="http://">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+
+                            <section>
+                                <!-- <div class="title-area">
+                      <h4 class="title-h2"></h4>
+                  </div> -->
+                                <div class="text-box-wrap">
+
+                                    <div class="tabs-menu ">
+                                        <ul class="tabs wide ">
+                                            <li class="tab active">
+                                                <a href="#tab_3"><span>Headers</span></a>
+                                            </li>
+                                            <li class="tab ">
+                                                <a href="#tab_4"><span>Body</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content text-box type2">
+
+                                        <div id="tab_3" class="tab-content_tiem active">
+                                            <div class="inner">
+                                                <div class="table-wrap type2">
+                                                    <div class="table-inner">
+                                                        <table class="table">
+                                                            <colgroup>
+                                                                <col class="" style="width: 30%;">
+                                                                <col class="" style="width: auto">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="">Key </th>
+                                                                    <th class="">Value </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class=""> 내용 </td>
+                                                                    <td class=""> 내용 </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div id="tab_4" class="tab-content_tiem">
+                                            <div class="check-area">
+                                                <div class="radiobox-wrap inlineblock">
+                                                    <input type="radio" id="s-label11" name="r-name1" class="radiobox">
+                                                    <label for="s-label11"><span>Text</span></label>
+                                                </div>
+                                                <div class="radiobox-wrap inlineblock">
+                                                    <input type="radio" id="s-label22" name="r-name1" class="radiobox">
+                                                    <label for="s-label22"><span>Json</span></label>
+                                                </div>
+                                                <div class="radiobox-wrap inlineblock">
+                                                    <input type="radio" id="s-label33" name="r-name1" class="radiobox">
+                                                    <label for="s-label33"><span>Xml</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="inner">
+                                                <!-- <textarea name="" id="" cols="" rows="" class="textarea" placeholder="placeholder"></textarea>   -->
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="title-area">
+                                    <h4 class="title-h2">Response</h4>
+                                </div>
+                                <div class="text-box-wrap">
+                                    <div class="tabs-menu">
+                                        <ul class="tabs wide ">
+                                            <li class="tab active">
+                                                <a href="#tab_11"><span>Pretty</span></a>
+                                            </li>
+                                            <li class="tab ">
+                                                <a href="#tab_12"><span>Raw</span></a>
+                                            </li>
+                                            <li class="tab ">
+                                                <a href="#tab_13"><span>Headers</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="tab-content text-box">
+                                        <div id="tab_11" class="tab-content_tiem active">
+                                            <!-- <textarea name="" id="" cols="" rows="" class="textarea" placeholder="placeholder"></textarea>  -->
+                                        </div>
+                                        <div id="tab_12" class="tab-content_tiem">
+                                            <!-- <textarea name="" id="" cols="" rows="" class="textarea" placeholder="placeholder"></textarea>      -->
+                                        </div>
+                                        <div id="tab_13" class="tab-content_tiem">
+                                            <!-- <textarea name="" id="" cols="" rows="" class="textarea" placeholder="placeholder"></textarea> -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                        </div><!-- // content-box -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- //con-wrap -->
+
+        <!-- footer -->
+
+    </div>
+</body>
+
+</html>

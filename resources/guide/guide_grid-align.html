@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>UI grid&align</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+  <link rel="stylesheet" href="/resources/static/css/common_pub.min.css">
+  <link rel="stylesheet" href="./guide.css">
+  <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+  <![endif]-->
+  <script src="/resources/static/js/library/jquery.min.js"></script>
+  <script src="/resources/static/js/library/jquerylibrary.js"></script>
+  <script src="/resources/static/js/common_pub.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css">
+  <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js" ></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  
+</head>
+<body>
+  <div class="wrapper">
+    <div class="guide wrap">
+      <!-- header -->
+      <header>
+        <div id="guide_header">
+          <h1 class="guide_h1">Grid Guide</h1>
+          <nav>
+            <ul class="tab_guide-list">
+              <li><a href="#grid">Grid</a></li>
+              <li><a href="#align">Align</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- //header -->
+      <style>
+        .rowflex > div { outline: 1px solid #333; }
+        .rowflex > div >* { background-color: #555; color:#ccc; }
+        .rowfloat > div { outline: 1px solid #333; }
+        .rowfloat > div >* { background-color: #555; color:#ccc; }
+      </style>
+      <!-- container -->
+      <div id="guide_container">
+        <div id="contents" style="">
+      
+
+          <div class="article" id="grid">
+            <h2 class="guide_h2"><i class="icon-title_bar colorP">|</i> Grid</h2>
+
+            <div class="item-inner">
+              <h3 class="guide_h3">rowflex / flexwrap</h3>
+              <h3 class="guide_h3">rowflex / flexwrap / col-auto(크기강재 지정) </h3>
+    <samp class="sample  js-source"  data-sample="code">
+      <div class="rowflex flexwrap">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+      </div>
+ 
+      <br />
+
+      <div class="rowflex flexwrap">
+        <div class="col-auto" style="width: 300px">1 300px 크기강재 지정</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+      </div>
+    </samp>
+            </div>
+
+            <div class="item-inner">
+              <h3 class="guide_h3">rowflex / flexwrap / padding-x / col-p0~100 (5% 배수) </h3>
+              <h3 class="guide_h3">rowfloat / ... / padding-x / col-p0~100 (5% 배수) </h3>
+    <samp class="sample  js-source"  data-sample="code">
+      <div class="rowflex flexwrap padding-x">
+        <div class="col-p50 col-mb-p100"><div>col-p50 : col-mb-p100</div></div>
+        <div class="col-p25 col-mb-p50"><div>col-p25  : col-mb-p50</div></div>
+        <div class="col-p25 col-mb-p50"><div>col-p25  : col-mb-p50</div></div>
+      </div>
+      <br />
+      <div class="rowfloat padding-x">
+        <div class="col-p50 col-mb-p100"><div>col-p50 : col-mb-p100</div></div>
+        <div class="col-p25 col-mb-p50"><div>col-p25  : col-mb-p50</div></div>
+        <div class="col-p25 col-mb-p50"><div>col-p25  : col-mb-p50</div></div>
+      </div>
+    </samp>
+            </div>
+
+            <div class="item-inner">
+              <h3 class="guide_h3">rowflex / flexwrap / padding-x / col-ep0~12 (열에 컬럼 겟수)</h3>
+              <h3 class="guide_h3">rowfloat / ...  / padding-x / col-ep0~12 (열에 컬럼 겟수)</h3>
+    <samp class="sample  js-source"  data-sample="code">
+      <div class="rowflex flexwrap padding-x">
+        <div class="col-ep3 col-mb-ep1"><div>col-ep3 : col-mb-ep1</div></div>
+        <div class="col-ep3 col-mb-ep2"><div>col-ep3 : col-mb-ep2</div></div>
+        <div class="col-ep3 col-mb-ep2"><div>col-ep3 : col-mb-ep2</div></div>
+        <div class="col-ep4 col-mb-ep2"><div>col-ep4 : col-mb-ep2</div></div>
+        <div class="col-ep4 col-mb-ep2"><div>col-ep4 : col-mb-ep2</div></div>
+        <div class="col-ep4 col-mb-ep2"><div>col-ep4 : col-mb-ep2</div></div>
+        <div class="col-ep4 col-mb-ep2"><div>col-ep4 : col-mb-ep2</div></div>
+
+        <div class="col-ep6 col-mb-ep4"><div>col-ep6 : col-mb-ep4</div></div>
+        <div class="col-ep6 col-mb-ep4"><div>col-ep6 : col-mb-ep4</div></div>
+        <div class="col-ep6 col-mb-ep4"><div>col-ep6 : col-mb-ep4</div></div>
+        <div class="col-ep6 col-mb-ep4"><div>col-ep6 : col-mb-ep4</div></div>
+        <div class="col-ep6 col-mb-ep2"><div>col-ep6 : col-mb-ep2</div></div>
+        <div class="col-ep6 col-mb-ep2"><div>col-ep6 : col-mb-ep2</div></div>
+      </div>
+      <br />
+      <div class="rowfloat padding-x">
+        <div class="col-ep3 col-mb-ep1"><div>col-ep3 : col-mb-ep1</div></div>
+        <div class="col-ep3 col-mb-ep2"><div>col-ep3 : col-mb-ep2</div></div>
+        <div class="col-ep3 col-mb-ep2"><div>col-ep3 : col-mb-ep2</div></div>
+        <div class="col-ep4 col-mb-ep2"><div>col-ep4 : col-mb-ep2</div></div>
+        <div class="col-ep4 col-mb-ep2"><div>col-ep4 : col-mb-ep2</div></div>
+        <div class="col-ep4 col-mb-ep2"><div>col-ep4 : col-mb-ep2</div></div>
+        <div class="col-ep4 col-mb-ep2"><div>col-ep4 : col-mb-ep2</div></div>
+
+        <div class="col-ep6 col-mb-ep4"><div>col-ep6 : col-mb-ep4</div></div>
+        <div class="col-ep6 col-mb-ep4"><div>col-ep6 : col-mb-ep4</div></div>
+        <div class="col-ep6 col-mb-ep4"><div>col-ep6 : col-mb-ep4</div></div>
+        <div class="col-ep6 col-mb-ep4"><div>col-ep6 : col-mb-ep4</div></div>
+        <div class="col-ep6 col-mb-ep2"><div>col-ep6 : col-mb-ep2</div></div>
+        <div class="col-ep6 col-mb-ep2"><div>col-ep6 : col-mb-ep2</div></div>
+      </div>
+    </samp>
+            </div>
+            
+          </div>
+          
+
+          <div class="article" id="align">
+            <h2 class="guide_h2"><i class="icon-title_bar colorP">|</i> Align</h2>
+
+            <div class="item-inner">
+              <h3 class="guide_h3">rowflex / jcc </h3>
+              <h3 class="guide_h3">rowfloat / fc </h3>
+    <samp class="sample  js-source"  data-sample="code">
+      <div class="rowflex jcc">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <br />
+      
+      <div class="rowfloat fc">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </samp>
+            </div>
+
+            <div class="item-inner">
+              <h3 class="guide_h3">rowflex / jcsb </h3>
+    <samp class="sample  js-source"  data-sample="code">
+      <div class="rowflex jcsb">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </samp>
+            </div>
+
+            <div class="item-inner">
+              <h3 class="guide_h3">rowflex / jcfs </h3>
+              <h3 class="guide_h3">rowfloat / fl </h3>
+    <samp class="sample  js-source"  data-sample="code">
+      <div class="rowflex jcfs">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <br />
+
+      <div class="rowfloat fl">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </samp>
+            </div>
+
+            <div class="item-inner">
+              <h3 class="guide_h3">rowflex / jcfe </h3>
+              <h3 class="guide_h3">rowfloat / fr </h3>
+    <samp class="sample  js-source"  data-sample="code">
+      <div class="rowflex jcfe">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <br />
+
+      <div class="rowflex jcfe">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </samp>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+      <!-- container -->
+
+      <!-- footer
+      <div id="guide_footer">
+          <div class="footer-inner">
+              COPYRIGHT TurfRainPackage GUIDE SYSTEM ALL RIGHTS RESERVED.
+          </div>
+      </div> -->
+      <!-- //footer -->
+
+    </div>
+  </div>
+</body>
+</html>
+

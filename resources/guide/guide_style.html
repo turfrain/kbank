@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Style guide</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+	<link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+	<link rel="stylesheet" href="/resources/static/css/common_pub.css">
+	<link rel="stylesheet" href="./guide.css">
+	<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+	<![endif]-->
+	<script src="/resources/static/js/library/jquery.min.js"></script>
+	<script src="/resources/static/js/library/jquerylibrary.js"></script>
+	<script src="/resources/static/js/common_pub.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css">
+  <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js" ></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+
+	<!-- 토스트 그리드 -->
+	<link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+	<link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+	<script type="text/javascript" src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+	<script type="text/javascript" src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+	
+	<!-- 토스트 에디터 -->
+	<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+	<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="guide wrap">
+		<!-- header -->
+		<header>
+			<div id="guide_header">
+				<h1 class="guide_h1">Style Guide</h1>
+				<nav>
+					<ul class="tab_guide-list">
+						<li><a href="#typo">typo</a></li>
+						<li><a href="#mainTitle">mainTitle *</a></li>
+						<li><a href="#contentPanel">contentPanel</a></li>
+						<li><a href="#textlist">text list</a></li>
+						<li><a href="#table">table *</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- //header -->
+
+<!-- 
+<div class="article" id="from">
+	<h2 class="guide_h2">form</h2>
+	<div class="item-inner">
+		<h3 class="guide_h3"> input:text </h3>
+		
+		<samp class="sample  js-source"  data-sample="code">
+			__code__
+		</samp>
+			
+    <pre data-sample="code"><code class="html, js, css">	
+      __code__
+    </code></pre>
+
+	</div>
+</div>
+-->
+
+
+		<!-- container -->
+		<div id="guide_container">
+			<div class="contents">
+
+				<div class="article" id="typo">
+					<h2 class="guide_h2"><i class="icon-title_bar colorP">|</i> typo</h2>
+			
+					<div class="item-inner">
+						<h3 class="guide_h3"> 주의(.text-notice [.colorB, .colorP, colorE,  text-muted]) </h3>
+						<samp class="sample  js-source"  data-sample="code">
+							<span class="text-notice colorB">[필수]colorB</span>  						&nbsp; &nbsp;
+							<span class="text-notice colorP">[Primary]colorP</span>          &nbsp; &nbsp;
+							<span class="text-notice colorE">[에러]colorE</span>             &nbsp; &nbsp;
+ 							<span class="text-notice text-muted">[저채도]text-muted</span>   &nbsp; &nbsp;
+							
+							<div class="flag-wrap">
+								<span class="flag flag-default"> 텍스트 </span>
+								<span class="flag flag-pink"> 텍스트 </span>
+							</div>
+						</samp>
+					</div>
+
+				</div>
+
+				<div class="article" id="mainTitle">
+					<h2 class="guide_h2"><i class="icon-title_bar colorP">|</i> mainTitle</h2>
+					<div class="item-inner">
+						<h3 class="guide_h3">페이지 메인 타이틀 </h3>
+
+						<samp class="sample js-source" data-sample="code">
+
+							<div class="title-area">
+								<div class="inner">
+									<h3 class="title"><span>타이틀</span></h3>
+									<p class="text">설명 설명 설명</p>
+								</div>
+							</div>
+
+						</samp>
+
+					</div>
+				</div>
+
+				<div class="article" id="contentPanel">
+					<h2 class="guide_h2"><i class="icon-title_bar colorP">|</i>contentPanel</h2>
+					<div class="item-inner">
+						<h3 class="guide_h3">패널 layout</h3>
+
+						<samp class="sample js-source" data-sample="code">
+							<article class="content-panel">
+								<div class="p-header">
+									<div class="title h3"><span>panel-header</span> <span>총</span><em>3</em><span>개</span></div>
+									<div class="ab-r">
+										<button class="btn btn_default" type="button"><span>Button 버튼</span></button>
+										<button class="btn btn_default" type="button"><span>Button 버튼</span></button>
+									</div>
+								</div>
+								<div class="p-body">panel-body</div>
+								<div class="p-footer">panel-footer</div>
+							</article>
+						</samp>
+
+					</div>
+
+
+					<div class="item-inner">
+						<h3 class="guide_h3">컨텐츠박스</h3>
+
+						<samp class="sample js-source" data-sample="code">
+							<article class="content-panel type_panel-con_box">
+								<div class="p-header">panel-header</div>
+								<div class="p-body">panel-body</div>
+								<div class="p-footer">panel-footer</div>
+							</article>
+						</samp>
+
+					</div>
+
+
+				</div><!-- article -->
+
+
+
+				<div class="article" id="table">
+
+					<h2 class="guide_h2"><i class="icon-title_bar colorP">|</i> table</h2>
+
+
+					 <div class="item-inner">
+						<h3 class="guide_h3">테이블 영역</h3>
+
+						<samp class="sample js-source" data-sample="code">
+<div class="table-wrap">
+	<div class="table-header">테이블 제목</div>
+	<div class="table-body">테이블 영역</div>
+	<div class="table-footer">테이블 페이징</div>
+</div>
+
+						</samp>
+
+					</div>
+
+
+					<div class="item-inner">
+						<h3 class="guide_h3"> 폼 테이블 검색 (디폴트) </h3>
+
+						<samp class="sample js-source" data-sample="code">
+
+<div class="table-wrap">
+	<div class="table-body">
+
+		<div class="search-box-wrap">
+			<form action="">
+				<div class="box-inner">
+					<ul class="box-lists grid-2">
+						<li class="item ">
+							<div class="inner form-box">
+								<label for="inp01" class="title">
+									<span class="js-tooltip" title="수신시스템  툴팁" >수신시스템</span>
+									<em class="require ml5"><span class="hidden">필수</span></em>
+								</label>
+								<div class="form-wrap">
+									<div class="select-box">
+										<select class="" id="">
+											<option value="1" selected disabled>전체</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+										<i class="arrow"></i>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item ">
+							<div class="inner form-box">
+								<label for="inp02" class="title">
+									<span> 인터페이스(ID)</span>
+								</label>
+								<div class="form-wrap inp-w  ">
+									<div class="input-box">
+										<input type="text" id="inp02" class="inp" value="" placeholder="인터페이스(ID) 입력">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item ">
+							<div class="inner form-box">
+								<label for="inpDate" class="title">
+									<span>대상 기간</span>
+								</label>
+								<div class="form-wrap">
+									<div class="date_set">
+										<span class="datepicker-box">
+											<input type="text" class="js-datepicker" placeholder="YYYY-MM-DD">
+										</span>
+										<span class="bar">-</span>
+										<span class="datepicker-box">
+											<input type="text" class="js-datepicker" placeholder="YYYY-MM-DD">
+										</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="item ">
+							<div class="inner form-box">
+								<label for="inp05" class="title">
+									<span>성공여부</span>
+								</label>
+								<div class="form-wrap">
+									<div class="radiobox-wrap inlineblock">
+										<input type="radio" id="inp-radio11" name="radio11" checked="" class="radiobox">
+										<label for="inp-radio11"><span>전체</span></label>
+									</div>
+									<div class="radiobox-wrap inlineblock">
+										<input type="radio" id="inp-radio12" name="radio11" class="radiobox">
+										<label for="inp-radio12"><span>성공</span></label>
+									</div>
+									<div class="radiobox-wrap inlineblock">
+										<input type="radio" id="inp-radio13" name="radio11" class="radiobox">
+										<label for="inp-radio13"><span>실패</span></label>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="btn-wrap">
+						<button class="btn btn-dark"><i class="i-search"></i><span>검색</span></button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</div>							
+
+						</samp>
+
+					</div>
+
+
+
+					<div class="item-inner">
+						<h3 class="guide_h3"> 폼 테이블 (form_table) </h3>
+						<p>
+							<code>
+								〈link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" 〉 <br>
+								〈script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"〉〈/script〉
+							</code>
+						</p>					
+
+						<samp class="sample js-source" data-sample="code">
+                                                  						
+<div class="table-wrap type-edit">
+	<div class="table-body">
+		<div class="table-inner">
+	
+			<form action=""> 
+				<table class="form_table">
+					<colgroup>
+						<col style="width:230px">
+						<col style="width:35%">
+						<col style="width:230px">
+						<col style="width:35%">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>
+								<span class="js-tooltip" title="인터페이스  툴팁">인터페이스</span>
+								<em class="require"><span class="hidden">필수</span></em>
+							</th>
+							<td>
+								<div class="select-box">
+									<select class="" id="">
+										<option value="1" selected="" disabled="">전체</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>
+									<i class="arrow"></i>
+								</div>
+							</td>
+							<th>
+								<span>인터페이스 ID</span>
+								<em class="require"><span class="hidden">필수</span></em>
+							</th>
+							<td>
+								<div class="input-box">
+									<input type="text" id="inp02" class="inp" value="" placeholder="인터페이스(ID) 입력">
+								</div>
+							</td>  
+						</tr>
+						<tr>
+							<th>
+								<span>시물레이션 기간</span>
+								<em class="require"><span class="hidden">필수</span></em>
+							</th>
+							<td>
+								<div class="form-box">
+									<div class="date_set">
+										<span class="datepicker-box">
+											<input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" id="">
+										</span>
+										<span class="bar">-</span>
+										<span class="datepicker-box">
+											<input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" id="">
+										</span>
+									</div>
+								</div>
+							</td>
+							<th>
+								<span>인코딩</span>
+							</th>
+							<td>
+								<div class="select-box">
+									<select class="" id="">
+										<option value="1" selected="" disabled="">선택</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>
+									<i class="arrow"></i>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<span>결과 수신 프로토콜</span>
+							</th>
+							<td>
+								<div class="form_set h40">
+									<div class="radiobox-wrap inlineblock">
+										<input type="radio" id="radiobox1-1" name="radiobox1" checked="" class="radiobox">
+										<label for="radiobox1-1"><span>Flat</span></label>
+									</div>
+									<div class="radiobox-wrap inlineblock">
+										<input type="radio" id="radiobox1-2" name="radiobox1" class="radiobox">
+										<label for="radiobox1-2"><span>Json</span></label>
+									</div>
+								</div>
+							</td>
+							<th>
+								<span>인코딩</span>
+							</th>
+							<td>
+								<div class="form_set h40">
+									<div class="checkbox-wrap inlineblock">
+										<input type="checkbox" id="checkbox1-1" name="checkbox1" class="checkbox">
+										<label for="checkbox1-1"><span>암호화 대상(컬럼)</span></label>
+									</div>
+									<div class="checkbox-wrap inlineblock">
+										<input type="checkbox" id="checkbox1-2" name="checkbox1" class="checkbox">
+										<label for="checkbox1-2"><span>암호화 대상(컬럼)</span></label>
+									</div>
+								</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+			</form> 
+	
+		</div>
+	</div>
+</div>
+                                                  					
+
+
+<div class="table-wrap type-edit mt50">
+	<div class="table-body">
+		
+		<div class="table-inner">
+	
+			<table class="form_table">
+				<colgroup>
+					<col style="width:230px">
+					<col style="width:calc(100% - 230px)">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>
+							<span>제목</span>
+							<em class="require"><span class="hidden">필수</span></em>
+						</th>
+						<td>
+							<div class="input-box">
+								<input type="text" id="inp02" class="inp" value="" placeholder="인터페이스(ID) 입력">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th class="vat">
+							<span>내용</span>
+							<em class="require"><span class="hidden">필수</span></em>
+						</th>
+						<td>
+							<div class="input-box" style="height:280px">
+								<textarea class="pd10" name="" id="" cols="30" rows="10"></textarea>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th class="vat">
+							<span>내용</span>
+							<em class="require"><span class="hidden">필수</span></em>
+						</th>
+						<td colspan="3">
+
+							<div class="editer_layout">
+								<div id="editor"></div>
+							</div>
+
+						</td>
+					</tr>
+					<tr>
+						<th><span>첨부파일</span></th>
+						<td>
+							<div class="trp file-box">
+								<label for="fileName" class="screen-reader-text">파일첨부</label>
+								<input type="text" id="fileName" class="trp-Filetext">
+								<input type="button" class="btn" value="찾아보기">
+								<input type="file" class="trp-Filehidden" onchange="javascript: document.getElementById('fileName').value = this.value" title="Insert Attachment">
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+	
+		</div>
+
+	</div>
+</div>
+<script>
+	$(function(){
+
+		const editor = new toastui.Editor({
+			el: document.querySelector('#editor'),
+			previewStyle: 'tab',
+				height: '280px',
+			initialValue: ""
+		});
+
+	})
+</script>
+
+						</samp>
+
+					</div>
+
+
+			
+					<div class="item-inner">
+						<h3 class="guide_h3">리스트 테이블 : 변경스타일(디폴트)</h3>
+
+						<samp class="sample js-source" data-sample="code">
+
+<div class="table-wrap">
+	<div class="table-body">
+				
+		<div class="table-inner">
+			<table class="table ">
+				<colgroup>
+					<col class="" style="width:12%">
+					<col class="" style="width:12%">
+					<col class="" style="width:8%">
+					<col class="" style="width:12%">
+					<col class="" style="width:12%">
+					<col class="" style="width:12%">
+					<col class="" style="width:12%">
+					<col class="" style="width:auto">
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="">로그 ID</th>
+						<th class="">로그 시간</th>
+						<th class="">인터페이스</th>
+						<th class="">수신시스템</th>
+						<th class="">인터페이스 ID</th>
+						<th class="">인터페이스명</th>
+						<th class="">성공여부</th>
+						<th class="">바로가기</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>uuid-5470-2840-1127</td>
+						<td>2023-07-04 08:12:20</td>
+						<td>FEP</td>
+						<td>FEP-계정계-수신1</td>
+						<td>Ext00000000</td>
+						<td>온라인 조회</td>
+						<td>
+							<div class="flag-wrap"><span class="flag flag-default">성공</span></div>
+						</td>
+						<td>
+							<button type="button" class="btn btn-xs btn-default">로그상세</button>
+							<button type="button" class="btn btn-xs btn-default">정보조회</button>
+						</td>
+					</tr>
+					<tr>
+						<td>uuid-5470-2840-1127</td>
+						<td>2023-07-04 08:12:20</td>
+						<td>FEP</td>
+						<td>FEP-계정계-수신1</td>
+						<td>Ext00000000</td>
+						<td>온라인 조회</td>
+						<td>
+							<div class="flag-wrap"><span class="flag flag-pink">실패</span></div>
+						</td>
+						<td>
+							<button type="button" class="btn btn-xs btn-default">로그상세</button>
+							<button type="button" class="btn btn-xs btn-default">정보조회</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	<div class="table-footer">
+		<div class="paging-wrap">
+			<a href="#" class="first disabled"></a>
+			<a href="#" class="pre disabled"></a>
+			<ul class="paging">
+				<li class="on"><a href="#"><span>1</span></a></li>
+				<li><a href="#"><span>2</span></a></li>
+				<li><a href="#"><span>3</span></a></li>
+			</ul>
+			<a href="#" class="next"></a>
+			<a href="#" class="last"></a>
+		</div>
+	</div>
+</div>
+
+
+						</samp>
+
+					</div>
+					
+					<div class="item-inner">
+						<h3 class="guide_h3"> 리스트 테이블 : 변경스타일(.type2) </h3>
+
+						<samp class="sample js-source" data-sample="code">
+
+<div class="table-wrap type2">
+	<div class="table-header">
+		
+		<div class="table-title-area">
+			<p class="table-title">REQUEST</p>
+			<div class="btn-area">
+				<button type="button" class="btn btn-icon btn-default"><i class="i-max"></i><span class="hidden">항목표시
+						버튼</span></button>
+			</div>
+		</div>
+
+	</div>
+	<div class="table-body">
+
+		<div class="table-inner">
+			<table class="table ">
+				<colgroup>
+					<col class="" width="10%">
+					<col class="" width="*">
+					<col class="" width="29%">
+					<col class="" width="12%">
+					<col class="" width="10%">
+					<col class="" width="10%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="">
+							번호
+						</th>
+						<th class="">
+							필드 명(영문)
+						</th>
+						<th class="">
+							필드 명(한글)
+						</th>
+						<th class="">
+							유형
+						</th>
+						<th class="">
+							길이
+						</th>
+						<th class="">
+							값
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="">
+							1
+						</td>
+						<td class="left">
+							strd_tlgr_vrsn
+						</td>
+						<td class="left">
+							strd_tlgr_vrsn
+						</td>
+						<td class="">
+							버전
+						</td>
+						<td class="">
+							String
+						</td>
+						<td class="">
+							3
+						</td>
+					</tr>
+					<tr>
+						<td class="">
+							1
+						</td>
+						<td class="left">
+							strd_tlgr_vrsn
+						</td>
+						<td class="left">
+							strd_tlgr_vrsn
+						</td>
+						<td class="">
+							버전
+						</td>
+						<td class="">
+							String
+						</td>
+						<td class="">
+							3
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+
+						</samp>
+
+					</div>
+
+
+					<div class="item-inner">
+						<h3 class="guide_h3">그리드 테이블 (tui.Grid)</h3>
+						<p>
+							<code>
+								〈link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" /〉 <br>
+								〈script type="text/javascript" src="https://uicdn.toast.com/grid/latest/tui-grid.js"〉〈/script〉
+							</code>
+						</p>
+						
+						<samp class="sample js-source" data-sample="code">
+
+<div class="table-wrap">
+	<div class="table-header">
+
+		<div class="table-title-area">
+			<p class="table-title">REQUEST</p>
+			<div class="btn-area">
+				<button type="button" class="btn btn-icon btn-default"><i class="i-max"></i><span class="hidden">항목표시
+						버튼</span></button>
+			</div>
+		</div>
+
+	</div>
+	<div class="table-body">
+
+		<div class="grid_table">
+			<div id="grid1"></div>
+		</div>
+
+	</div>
+</div>
+
+<script>
+  var grid1Data = [
+		{
+				id: '1',
+				field_en: 'strd_tlgr_vrsn',
+				field_kr: '전문길이',
+				type: 'Number',
+				length: '100',
+				lockup: "-",
+				input: 'check',
+		},
+		{
+				id: '2',
+				field_en: 'strd_tlgr_vrsn',
+				field_kr: '전문길이',
+				type: 'Number',
+				length: '100',
+				lockup: "106",
+				input: 'check',
+		},
+		{
+				id: '3',
+				field_en: 'strd_tlgr_vrsn',
+				field_kr: '전문길이',
+				type: 'String',
+				length: '100',
+				lockup: "-",
+				input: '',
+		},
+		{
+				id: '4',
+				field_en: 'strd_tlgr_vrsn',
+				field_kr: '전문길이',
+				type: 'Number',
+				length: '100',
+				lockup: "116",
+				input: '',
+		},
+		{
+				id: '5',
+				field_en: 'strd_tlgr_vrsn',
+				field_kr: '전문길이',
+				type: 'Number',
+				length: '100',
+				lockup: "-",
+				input: 'check',
+		},
+	
+		];
+	var grid1 = new tui.Grid({
+		el: document.getElementById('grid1'),
+		data: grid1Data,
+		rowHeight: 50,
+		scrollX: false,
+		scrollY: false,
+		//rowHeaders: ['rowNum'], // 좌측 넘버추가
+		//minBodyHeight: 30,
+		pageOptions: {
+			useClient: true,
+			perPage: 4
+		},
+		columns: [
+			{
+				header: '번호',
+				name: 'id',
+				align: "center",
+				width: 80,
+			},
+			{
+				header: '필드 명(영문)',
+				name: 'field_en'
+			},
+			{
+				header: '필드 명(한글)',
+				name: 'field_kr'
+			},
+			{
+				header: '유형',
+				name: 'type',
+				align: "center",
+				width: 140,
+			},
+			{
+				header: '길이',
+				name: 'length',
+				align: "center",
+				width: 130,
+			},
+			{
+				header: '고정값',
+				name: 'lockup',
+				align: "center",
+				width: 120,
+				formatter: function ($e) {
+					var ck = ""
+					if($e.value == "-"){
+						ck = "-"
+					}else{
+						ck = `
+						<div class="form-box">
+							<div class="input-box">
+								<input type="text" class="inp" placeholder="활성화" id="" value="${$e.value}">
+							</div>
+						</div>
+						`
+					}
+						return  ck;
+				},
+			},
+			{
+				header: '필수 입력 여부',
+				name: 'input',
+				align: "center",
+				width: 100,
+				formatter: function ($e) {
+					var ck ="";
+					if($e.value == "check"){
+						ck = `
+						<div class="checkbox-wrap inlineblock">
+							<input type="checkbox" id="checkbox1-${$e.row.id}" name="checkbox1" class="checkbox" checked>
+							<label for="checkbox1-${$e.row.id}"><span></span></label>
+						</div>
+						`      
+					}else{
+						ck = `
+						<div class="checkbox-wrap inlineblock">
+							<input type="checkbox" id="checkbox1-${$e.row.id}" name="checkbox1" class="checkbox">
+							<label for="checkbox1-${$e.row.id}"><span></span></label>
+						</div>
+						`
+					}
+			
+
+						return  ck;
+				},
+			},
+		]
+});
+</script>
+						
+						</samp>
+
+						<samp class="sample js-source" data-sample="code">
+
+<div class="table-wrap type2">
+	<div class="table-header">
+
+		<div class="table-title-area">
+			<p class="table-title">REQUEST</p>
+			<div class="btn-area">
+				<button type="button" class="btn btn-icon btn-default"><i class="i-max"></i><span class="hidden">항목표시
+						버튼</span></button>
+			</div>
+		</div>
+
+	</div>
+	<div class="table-body">
+
+		<div class="gridlist_table">
+			<div id="grid2"></div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	var grid2Data = [
+	{
+			id: '1',
+			field_en: 'strd_tlgr_vrsn',
+			field_kr: '전문길이',
+			type: 'Number',
+			length: '100',
+			input: '-',
+	},
+	{
+			id: '2',
+			field_en: 'strd_tlgr_vrsn',
+			field_kr: '전문길이',
+			type: 'Number',
+			length: '100',
+			input: '-',
+	},
+	{
+			id: '3',
+			field_en: 'strd_tlgr_vrsn',
+			field_kr: '전문길이',
+			type: 'Number',
+			length: '100',
+			input: '-',
+	},
+	{
+			id: '4',
+			field_en: 'strd_tlgr_vrsn',
+			field_kr: '전문길이',
+			type: 'Number',
+			length: '100',
+			input: '-',
+	},
+	{
+			id: '5',
+			field_en: 'strd_tlgr_vrsn',
+			field_kr: '전문길이',
+			type: 'Number',
+			length: '100',
+			input: '-',
+	},
+
+	];
+	var grid2 = new tui.Grid({
+		el: document.getElementById('grid2'),
+		data: grid2Data,
+		rowHeight: 50,
+		scrollX: false,
+		scrollY: false,
+		//rowHeaders: ['rowNum'], // 좌측 넘버추가
+		//minBodyHeight: 30,
+		/* pageOptions: {
+			useClient: true,
+			perPage: 4
+		}, */
+		columns: [
+			{
+				header: '번호',
+				name: 'id',
+				align: "center",
+				width: 80,
+			},
+			{
+				header: '필드 명(영문)',
+				name: 'field_en'
+			},
+			{
+				header: '필드 명(한글)',
+				name: 'field_kr'
+			},
+			{
+				header: '유형',
+				name: 'type',
+				align: "center",
+				width: 120,
+			},
+			{
+				header: '길이',
+				name: 'length',
+				align: "center",
+				width: 120,
+			},
+			{
+				header: '입력',
+				name: 'input',
+				align: "center",
+				width: 120,
+			},
+		]
+});
+</script>
+
+						</samp>
+
+					</div>
+
+
+
+					<div class="item-inner">
+						<h3 class="guide_h3"> 테이터 없음 (.data-empty)</h3>
+
+						<samp class="sample js-source" data-sample="code">
+							<div class="data-empty">
+								<p class="txt_empty">데이터가 없습니다.</p>
+							</div>
+						</samp>
+
+					</div>
+
+				</div>
+ 
+
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer
+    <div id="guide_footer">
+        <div class="footer-inner">
+            COPYRIGHT TurfRainPackage GUIDE SYSTEM ALL RIGHTS RESERVED.
+        </div>
+    </div>  -->
+		<!-- //footer -->
+
+	</div>
+</div>
+<script>
+	$(".guide_h2").on("click", function (e) {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 100);
+		TRP.debug("scroll TOP");
+		return false;
+	})
+</script>
+
+</body>
+</html>

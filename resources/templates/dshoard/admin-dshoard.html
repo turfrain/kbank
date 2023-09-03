@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <title>관리자 대시 보드</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.css">
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.js"></script>
+</head>
+
+<body class="">
+    <div class="wrapper pageclass">
+
+        <!-- skip -->
+
+        <div class="skip_nav">
+            <a href="#leftmenu" class="goto-menu">주메뉴 바로가기</a>
+            <a href="#container" class="goto-content">본문 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <!-- con-wrap -->
+        <div class="con-wrap">
+
+            <!-- gnb_left -->
+            <div class="left-area js-left_area open">
+                <div class="inner">
+                    <h1><a href="/"><img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank"></a></h1>
+                    <menu class="left-menu">
+                        <!--  [D] depth1 class: active-->
+                        <ul class="menu js-accordion_menu">
+                            <li class="depth1 m01">
+                                <a href="#n" class="menu_d1 js-acc_btn">대시보드</a>
+                            </li>
+                            <li class="depth1 m02">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 응답 거래</a>
+                                <ul class="depth2">
+                                    <li class="active"><a href="#n">전문포맷관리</a></li>
+                                    <li><a href="#n">정보조회</a></li>
+                                    <li><a href="#n">정보등록</a></li>
+                                    <li><a href="#n">로그조회</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1 m03">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 발신 거래</a>
+                            </li>
+                            <li class="depth1 m04">
+                                <a href="#n" class="menu_d1 js-acc_btn">게시판</a>
+                            </li>
+                            <li class="depth1 m05">
+                                <a href="#n" class="menu_d1 js-acc_btn">시스템 정보</a>
+                            </li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="menu_closed js-menu_closed">
+                    <button type="button"><span class="hidden">닫기</span></button>
+                </div>
+            </div>
+            <!-- //gnb_left -->
+
+            <div #id="container" class="container">
+                <!-- header -->
+
+
+                <div class="header-wrap">
+                    <header class="header">
+                        <div class="header-area">
+                            <div class="my-alram">
+                                <button type="button" class="alram-btn"><span class="txt">알림</span><span class="on"></span></button>
+                            </div>
+                            <div class="my-info">
+                                <button type="button" class="my-btn"><span class="my-name">홍길동</span><span class="my-num">(2*****)</span></button>
+                            </div>
+                            <div class="loginout"><button>로그아웃</button></div>
+                        </div>
+                    </header>
+
+                    <div class="page-title-wrap">
+
+                        <div class="inner">
+                            <h2 class="title"><span>대시보드</span></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //header -->
+
+                <div class="contents">
+                    <div class="contents-inner">
+                        <div class="content-box">
+
+                            <section class="service-section">
+                                <div class="section-wrap">
+                                    <div class="section-inner">
+
+                                        <div class="rowflex flexwrap padding-15">
+                                            <div class="col-p25">
+                                                <div class="service-item border_round">
+                                                    <div class="item-inner">
+                                                        <div class="icon-box"><img src="/resources/static/images//dshoard/service-icon.png" alt=""></div>
+                                                        <div class="text-box">
+                                                            <div class="category"><span>EAI Proxy</span></div>
+                                                            <div class="state state-running"><span>Running</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-p25">
+                                                <div class="service-item border_round">
+                                                    <div class="item-inner">
+                                                        <div class="icon-box"><img src="/resources/static/images//dshoard/service-icon.png" alt=""></div>
+                                                        <div class="text-box">
+                                                            <div class="category"><span>MCI Proxy</span></div>
+                                                            <div class="state state-stop"><span>STOP</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-p25">
+                                                <div class="service-item border_round">
+                                                    <div class="item-inner">
+                                                        <div class="icon-box"><img src="/resources/static/images//dshoard/service-icon.png" alt=""></div>
+                                                        <div class="text-box">
+                                                            <div class="category"><span>FEP Proxy</span></div>
+                                                            <div class="state state-running"><span>Running</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-p25">
+                                                <div class="service-item border_round">
+                                                    <div class="item-inner">
+                                                        <div class="icon-box"><img src="/resources/static/images//dshoard/service-icon.png" alt=""></div>
+                                                        <div class="text-box">
+                                                            <div class="category"><span>IIS AP</span></div>
+                                                            <div class="state state-running"><span>Running</span></div>
+                                                        </div>
+                                                        <!-- 활성화 : active -->
+                                                        <div class="control-box">
+                                                            <button class="btn btn-play"><i class="icon-play_16"></i></button>
+                                                            <button class="btn btn-stop active"><i class="icon-stop_16"></i></button>
+                                                            <button class="btn btn-reload"><i class="icon-reload_16"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="service-section">
+                                <div class="section-wrap">
+                                    <div class="section-inner">
+
+
+                                        <div class="content-panel type_panel-notice_board border_round">
+                                            <div class="p-head">
+                                                <div class="title"><span>배치 실행 현황</span></div>
+                                                <div class="side_set">
+                                                    <button type="button" class="btn btn-none btn-xs"><span>더보기</span><i class="i-more"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="p-body">
+
+                                                <div class="table-wrap">
+                                                    <div class="table-inner">
+                                                        <table class="table ">
+                                                            <colgroup>
+                                                                <col class="" style="width:28%">
+                                                                <col class="" style="width:18%">
+                                                                <col class="" style="width:18%">
+                                                                <col class="" style="width:18%">
+                                                                <col class="" style="width:18%">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="">로그 일시</th>
+                                                                    <th class="">로그 ID</th>
+                                                                    <th class="">배치 ID</th>
+                                                                    <th class="">배치 명</th>
+                                                                    <th class="">성공여부</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <td>2023-07-10 20:15:00</td>
+                                                                    <td>로그 ID</td>
+                                                                    <td>배치 ID</td>
+                                                                    <td>인사정보 동기화</td>
+                                                                    <td>
+
+                                                                        <div class="flag-wrap"><span class="flag flag-default">성공</span></div>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>2023-07-10 20:15:00</td>
+                                                                    <td>로그 ID</td>
+                                                                    <td>배치 ID</td>
+                                                                    <td>인사정보 동기화</td>
+                                                                    <td>
+
+                                                                        <div class="flag-wrap"><span class="flag flag-pink">실패</span></div>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>2023-07-10 20:15:00</td>
+                                                                    <td>로그 ID</td>
+                                                                    <td>배치 ID</td>
+                                                                    <td>인사정보 동기화</td>
+                                                                    <td>
+
+                                                                        <div class="flag-wrap"><span class="flag flag-default">성공</span></div>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>2023-07-10 20:15:00</td>
+                                                                    <td>로그 ID</td>
+                                                                    <td>배치 ID</td>
+                                                                    <td>인사정보 동기화</td>
+                                                                    <td>
+
+                                                                        <div class="flag-wrap"><span class="flag flag-pink">실패</span></div>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div><!-- table-wrap -->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="service-section">
+                                <div class="section-wrap">
+                                    <div class="section-inner">
+
+
+                                        <div class="content-panel type_panel-notice_board border_round">
+                                            <div class="p-head">
+                                                <div class="title"><span>수신 시스템 현황</span></div>
+                                                <div class="side_set">
+                                                    <button type="button" class="btn btn-sm btn-primary"><i class="i-add"></i><span>추가</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="p-body">
+
+                                                <div class="table-wrap">
+                                                    <div class="table-inner">
+                                                        <table class="table ">
+                                                            <colgroup>
+                                                                <col class="" style="width:12%">
+                                                                <col class="" style="width:12%">
+                                                                <col class="" style="width:12%">
+                                                                <col class="" style="width:12%">
+                                                                <col class="" style="width:14%">
+
+                                                                <col class="" style="width:14%">
+                                                                <col class="" style="width:12%">
+                                                                <col class="" style="width:12%">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="">대분류</th>
+                                                                    <th class="">업무 구분</th>
+                                                                    <th class="">서버순번</th>
+                                                                    <th class="">IP(URL)</th>
+                                                                    <th class="">PORT</th>
+
+                                                                    <th class="">하위주소</th>
+                                                                    <th class="">프로토콜</th>
+                                                                    <th class="">서버구분</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <td>계정계</td>
+                                                                    <td>펌뱅킹시스템</td>
+                                                                    <td>1</td>
+                                                                    <td>172.236.000.000</td>
+                                                                    <td>14280</td>
+
+                                                                    <td>-</td>
+                                                                    <td>http</td>
+                                                                    <td>스테이징</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>계정계</td>
+                                                                    <td>EAI</td>
+                                                                    <td>1</td>
+                                                                    <td>172.236.000.000</td>
+                                                                    <td>14280</td>
+
+                                                                    <td>-</td>
+                                                                    <td>http</td>
+                                                                    <td>스테이징</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>계정계</td>
+                                                                    <td>펌뱅킹시스템</td>
+                                                                    <td>1</td>
+                                                                    <td>172.236.000.000</td>
+                                                                    <td>14280</td>
+
+                                                                    <td>-</td>
+                                                                    <td>http</td>
+                                                                    <td>스테이징</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>계정계</td>
+                                                                    <td>EAI</td>
+                                                                    <td>1</td>
+                                                                    <td>172.236.000.000</td>
+                                                                    <td>14280</td>
+
+                                                                    <td>-</td>
+                                                                    <td>http</td>
+                                                                    <td>스테이징</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div><!-- table-wrap -->
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <!-- //container -->
+
+        <!-- footer -->
+
+    </div>
+</body>
+
+</html>

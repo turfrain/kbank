@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <title>사용자 대시보드</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.css">
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.js"></script>
+</head>
+
+<body class="">
+    <div class="wrapper pageclass">
+
+        <!-- skip -->
+
+        <div class="skip_nav">
+            <a href="#leftmenu" class="goto-menu">주메뉴 바로가기</a>
+            <a href="#container" class="goto-content">본문 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <!-- con-wrap -->
+        <div class="con-wrap">
+
+            <!-- gnb_left -->
+            <div class="left-area js-left_area open">
+                <div class="inner">
+                    <h1><a href="/"><img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank"></a></h1>
+                    <menu class="left-menu">
+                        <!--  [D] depth1 class: active-->
+                        <ul class="menu js-accordion_menu">
+                            <li class="depth1 m01">
+                                <a href="#n" class="menu_d1 js-acc_btn">대시보드</a>
+                            </li>
+                            <li class="depth1 m02">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 응답 거래</a>
+                                <ul class="depth2">
+                                    <li class="active"><a href="#n">전문포맷관리</a></li>
+                                    <li><a href="#n">정보조회</a></li>
+                                    <li><a href="#n">정보등록</a></li>
+                                    <li><a href="#n">로그조회</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1 m03">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 발신 거래</a>
+                            </li>
+                            <li class="depth1 m04">
+                                <a href="#n" class="menu_d1 js-acc_btn">게시판</a>
+                            </li>
+                            <li class="depth1 m05">
+                                <a href="#n" class="menu_d1 js-acc_btn">시스템 정보</a>
+                            </li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="menu_closed js-menu_closed">
+                    <button type="button"><span class="hidden">닫기</span></button>
+                </div>
+            </div>
+            <!-- //gnb_left -->
+
+            <div #id="container" class="container">
+                <!-- header -->
+
+
+                <div class="header-wrap">
+                    <header class="header">
+                        <div class="header-area">
+                            <div class="my-alram">
+                                <button type="button" class="alram-btn"><span class="txt">알림</span><span class="on"></span></button>
+                            </div>
+                            <div class="my-info">
+                                <button type="button" class="my-btn"><span class="my-name">홍길동</span><span class="my-num">(2*****)</span></button>
+                            </div>
+                            <div class="loginout"><button>로그아웃</button></div>
+                        </div>
+                    </header>
+
+                    <div class="page-title-wrap">
+
+                        <div class="inner">
+                            <h2 class="title"><span>대시보드</span></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //header -->
+
+                <div class="contents">
+                    <div class="contents-inner">
+                        <div class="content-box">
+
+                            <section class="service-section">
+                                <div class="section-wrap">
+                                    <div class="section-inner">
+
+
+                                        <div class="content-panel type_panel-notice_board border_round">
+                                            <div class="p-head">
+                                                <div class="title"><span>나의 정보 등록 현황</span></div>
+                                                <div class="side_set">
+                                                    <button type="button" class="btn btn-none btn-xs"><span>더보기</span><i class="i-more"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="p-body">
+
+                                                <div class="table-wrap">
+                                                    <div class="table-inner">
+                                                        <table class="table ">
+                                                            <colgroup>
+                                                                <col class="" style="width:100px">
+                                                                <col class="" style="width:13%">
+                                                                <col class="" style="width:a3to">
+                                                                <col class="" style="width:12%">
+                                                                <col class="" style="width:12%">
+
+                                                                <col class="" style="width:8%">
+                                                                <col class="" style="width:8%">
+                                                                <col class="" style="width:20%">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="">일련번호</th>
+                                                                    <th class="">인터페이스 ID</th>
+                                                                    <th class="">인터페이스 명</th>
+                                                                    <th class="">시뮬레이션 시작일자</th>
+                                                                    <th class="">시뮬레이션 종료일자</th>
+
+                                                                    <th class="">상태</th>
+                                                                    <th class="">최종 수정자</th>
+                                                                    <th class="">최종 수정 일시</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>인터페이스 ID</td>
+                                                                    <td>인터페이스 명</td>
+                                                                    <td>2023-01-01</td>
+                                                                    <td>2023-01-01</td>
+                                                                    <td>
+
+                                                                        <div class="flag-wrap"><span class="flag flag-default w70">Valid</span></div>
+
+                                                                    </td>
+                                                                    <td>홍길동</td>
+                                                                    <td>2023-01-01 20:30:15</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>인터페이스 ID</td>
+                                                                    <td>인터페이스 명</td>
+                                                                    <td>2023-01-01</td>
+                                                                    <td>2023-01-01</td>
+                                                                    <td>
+
+                                                                        <div class="flag-wrap"><span class="flag flag-default w70">Valid</span></div>
+
+                                                                    </td>
+                                                                    <td>홍길동</td>
+                                                                    <td>2023-01-01 20:30:15</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>인터페이스 ID</td>
+                                                                    <td>인터페이스 명</td>
+                                                                    <td>2023-01-01</td>
+                                                                    <td>2023-01-01</td>
+                                                                    <td>
+
+                                                                        <div class="flag-wrap"><span class="flag flag-default w70">Valid</span></div>
+
+                                                                    </td>
+                                                                    <td>홍길동</td>
+                                                                    <td>2023-01-01 20:30:15</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>4</td>
+                                                                    <td>인터페이스 ID</td>
+                                                                    <td>인터페이스 명</td>
+                                                                    <td>2023-01-01</td>
+                                                                    <td>2023-01-01</td>
+                                                                    <td>
+
+                                                                        <div class="flag-wrap"><span class="flag flag-pink w70">Invalid</span></div>
+
+                                                                    </td>
+                                                                    <td>홍길동</td>
+                                                                    <td>2023-01-01 20:30:15</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div><!-- table-wrap -->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section class="service-section">
+                                <div class="section-wrap">
+                                    <div class="section-inner">
+
+
+                                        <div class="content-panel type_panel-notice_board border_round">
+                                            <div class="p-head">
+                                                <div class="title"><span>공지사항</span></div>
+                                                <div class="side_set">
+                                                    <button type="button" class="btn btn-none btn-xs"><span>더보기</span><i class="i-more"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="p-body">
+
+                                                <div class="table-wrap">
+                                                    <div class="table-inner">
+                                                        <table class="table ">
+                                                            <colgroup>
+                                                                <col class="" style="width:100px">
+                                                                <col class="" style="width:auto">
+                                                                <col class="" style="width:10%">
+                                                                <col class="" style="width:20%">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="">일련번호</th>
+                                                                    <th class="">제목</th>
+                                                                    <th class="">자성자</th>
+                                                                    <th class="">작성 일시</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td class="tal">ISS 서비스 오픈</td>
+                                                                    <td>관리자</td>
+                                                                    <td>2023-01-01 20:30:15</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td class="tal">ISS 서비스 오픈</td>
+                                                                    <td>관리자</td>
+                                                                    <td>2023-01-01 20:30:15</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td class="tal">ISS 서비스 오픈</td>
+                                                                    <td>관리자</td>
+                                                                    <td>2023-01-01 20:30:15</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>4</td>
+                                                                    <td class="tal">ISS 서비스 오픈</td>
+                                                                    <td>관리자</td>
+                                                                    <td>2023-01-01 20:30:15</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div><!-- table-wrap -->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <!-- //container -->
+
+        <!-- footer -->
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <title>IIS 응답 거래 정보 가져오기</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.css">
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.js"></script>
+</head>
+
+<body class="">
+    <div class="wrapper pageclass">
+
+        <!-- skip -->
+
+        <div class="skip_nav">
+            <a href="#leftmenu" class="goto-menu">주메뉴 바로가기</a>
+            <a href="#container" class="goto-content">본문 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <!-- con-wrap -->
+        <div class="con-wrap">
+
+            <!-- gnb_left -->
+            <div class="left-area js-left_area open">
+                <div class="inner">
+                    <h1><a href="/"><img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank"></a></h1>
+                    <menu class="left-menu">
+                        <!--  [D] depth1 class: active-->
+                        <ul class="menu js-accordion_menu">
+                            <li class="depth1 m01">
+                                <a href="#n" class="menu_d1 js-acc_btn">대시보드</a>
+                            </li>
+                            <li class="depth1 m02">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 응답 거래</a>
+                                <ul class="depth2">
+                                    <li class="active"><a href="#n">전문포맷관리</a></li>
+                                    <li><a href="#n">정보조회</a></li>
+                                    <li><a href="#n">정보등록</a></li>
+                                    <li><a href="#n">로그조회</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1 m03">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 발신 거래</a>
+                            </li>
+                            <li class="depth1 m04">
+                                <a href="#n" class="menu_d1 js-acc_btn">게시판</a>
+                            </li>
+                            <li class="depth1 m05">
+                                <a href="#n" class="menu_d1 js-acc_btn">시스템 정보</a>
+                            </li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="menu_closed js-menu_closed">
+                    <button type="button"><span class="hidden">닫기</span></button>
+                </div>
+            </div>
+            <!-- //gnb_left -->
+
+            <div #id="container" class="container">
+                <!-- header -->
+
+
+                <div class="header-wrap">
+                    <header class="header">
+                        <div class="header-area">
+                            <div class="my-alram">
+                                <button type="button" class="alram-btn"><span class="txt">알림</span><span class="on"></span></button>
+                            </div>
+                            <div class="my-info">
+                                <button type="button" class="my-btn"><span class="my-name">홍길동</span><span class="my-num">(2*****)</span></button>
+                            </div>
+                            <div class="loginout"><button>로그아웃</button></div>
+                        </div>
+                    </header>
+
+                    <div class="page-title-wrap">
+
+                        <div class="inner">
+                            <h2 class="title"><span>대시보드</span></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //header -->
+
+                <div class="contents">
+                    <div class="contents-inner">
+                        <div class="content-box">
+
+                            <a href="#" class="btn btn-dark js-popup_default_alert1-btn"><span>IIS 응답 거래 정보 가져오기</span></a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <!-- //container -->
+
+        <!-- footer -->
+
+    </div>
+
+
+
+
+    <div id="popup_default_alert1-wrap" class="trp popupfixed-wrap default_alert">
+        <div class="popup-dim"></div>
+        <div class="popup-align pop-md">
+            <div class="popup-vertical">
+                <div class="popup-layer" style="">
+
+                    <div class="pop-panel">
+                        <div class="pop-head">
+                            <a class="btn_close icon-pop_colse_24 js-closepop" href="#">X</a>
+                            <div class="pop_tit">IIS 응답 거래 시뮬레이션 정보 내보내기</div>
+                        </div>
+                        <div class="pop-body pt0">
+                            <section class="section">
+
+                                <div class="table-wrap mt0">
+                                    <div class="table-body">
+
+                                        <div class="table-inner">
+
+                                            <table class="form_table table_rowline">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form_set h40">
+                                                                <div class="radiobox-wrap inlineblock">
+                                                                    <input type="radio" id="radiobox1-1" name="radiobox1" checked="" class="radiobox" value="radio_view">
+                                                                    <label for="radiobox1-1"><span>화면 입력</span></label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="js-radiobox_content radio_view">
+                                                                <div class="tabmenu-wrap mt10">
+                                                                    <div class="tabs-menu">
+
+                                                                        <ul class="tabs wide ">
+                                                                            <li class="tab active">
+                                                                                <a href="#tab_1"><span>JSON</span></a>
+                                                                            </li>
+                                                                            <li class="tab ">
+                                                                                <a href="#tab_2"><span>XML</span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+
+                                                                    <div class="tab-content text-box">
+                                                                        <div id="tab_1" class="tab-content_tiem active">
+                                                                            <div class="scroll-type" style="height: 300px;">
+                                                                                <div class="inner">
+                                                                                    padding: 10px 12px;<br>
+                                                                                    background-color: $white;<br>
+                                                                                    border-radius: 4px;<br>
+                                                                                    border: 1px solid #ddd;<br>
+                                                                                    overflow-y: auto;<br>
+                                                                                    padding: 10px 12px;<br>
+                                                                                    background-color: $white;<br>
+                                                                                    border-radius: 4px;<br>
+                                                                                    border: 1px solid #ddd;<br>
+                                                                                    overflow-y: auto;<br>
+                                                                                    padding: 10px 12px;<br>
+                                                                                    background-color: $white;<br>
+                                                                                    border-radius: 4px;<br>
+                                                                                    border: 1px solid #ddd;<br>
+                                                                                    overflow-y: auto;<br>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div id="tab_2" class="tab-content_tiem">
+                                                                            <div class="scroll-type" style="height: 300px;">
+                                                                                <div class="inner">
+                                                                                    padding: 10px 12px;<br>
+                                                                                    background-color: $white;<br>
+                                                                                    border-radius: 4px;<br>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form_set h40">
+                                                                <div class="radiobox-wrap inlineblock">
+                                                                    <input type="radio" id="radiobox1-2" name="radiobox1" class="radiobox" value="radio_file">
+                                                                    <label for="radiobox1-2"><span>파일첨부</span></label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="js-radiobox_content radio_file" style="display: none;">
+                                                                <div class="gray-area mt10">
+                                                                    <div class="trp file-box">
+                                                                        <label for="fileName" class="screen-reader-text">파일첨부</label>
+                                                                        <input type="text" id="fileName" class="trp-Filetext">
+                                                                        <input type="button" class="btn" value="찾아보기">
+                                                                        <input type="file" class="trp-Filehidden" onchange="javascript: document.getElementById('fileName').value = this.value" title="Insert Attachment">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </section>
+                        </div>
+                        <div class="pop-foot">
+
+                            <div class="btn-area jc-end">
+                                <button type="button" class="btn btn-primary"><i class="icon-import_16"></i><span>가져오기</span></button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* popup */
+        var popup_default_alert1 = $(".js-popup_default_alert1-btn").trpLayerFixedPopup("#popup_default_alert1-wrap");
+        $(popup_default_alert1.getBtn).on("click", function($e) {
+            $e.preventDefault();
+            popup_default_alert1.open(this); // or false   
+        });
+        $("body").on("click", "#popup_default_alert1-wrap .js-closepop, #popup_default_alert1-wrap .popup-dim", function($e) {
+            $e.preventDefault();
+            popup_default_alert1.close();
+        });
+
+
+        /* radio */
+
+
+        $("#popup_default_alert1-wrap input[name=radiobox1]").on("change", function($e) {
+            console.log(">>>L ::: ", $(this).val())
+            if ($(this).val() === "radio_view") {
+                $(".js-radiobox_content.radio_view").slideDown();
+                $(".js-radiobox_content.radio_file").slideUp();
+            } else {
+                $(".js-radiobox_content.radio_view").slideUp();
+                $(".js-radiobox_content.radio_file").slideDown();
+            }
+        })
+    </script>
+
+</body>
+
+</html>

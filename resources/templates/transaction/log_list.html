@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <title>IIS 응답 거래 로그 조회</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.css">
+    <!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.js"></script>
+</head>
+
+<body>
+    <div class="wrapper pageclass">
+
+        <!-- skip -->
+
+        <div class="skip_nav">
+            <a href="#leftmenu" class="goto-menu">주메뉴 바로가기</a>
+            <a href="#container" class="goto-content">본문 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <!-- con-wrap -->
+        <div class="con-wrap">
+
+            <!-- gnb_left -->
+            <div class="left-area js-left_area open">
+                <div class="inner">
+                    <h1><a href="/"><img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank"></a></h1>
+                    <menu class="left-menu">
+                        <!--  [D] depth1 class: active-->
+                        <ul class="menu js-accordion_menu">
+                            <li class="depth1 m01">
+                                <a href="#n" class="menu_d1 js-acc_btn">대시보드</a>
+                            </li>
+                            <li class="depth1 m02">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 응답 거래</a>
+                                <ul class="depth2">
+                                    <li class="active"><a href="#n">전문포맷관리</a></li>
+                                    <li><a href="#n">정보조회</a></li>
+                                    <li><a href="#n">정보등록</a></li>
+                                    <li><a href="#n">로그조회</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1 m03">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 발신 거래</a>
+                            </li>
+                            <li class="depth1 m04">
+                                <a href="#n" class="menu_d1 js-acc_btn">게시판</a>
+                            </li>
+                            <li class="depth1 m05">
+                                <a href="#n" class="menu_d1 js-acc_btn">시스템 정보</a>
+                            </li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="menu_closed js-menu_closed">
+                    <button type="button"><span class="hidden">닫기</span></button>
+                </div>
+            </div>
+            <!-- //gnb_left -->
+
+            <div id="#container" class="container">
+                <!-- header -->
+
+
+                <div class="header-wrap">
+                    <header class="header">
+                        <div class="header-area">
+                            <div class="my-alram">
+                                <button type="button" class="alram-btn"><span class="txt">알림</span><span class="on"></span></button>
+                            </div>
+                            <div class="my-info">
+                                <button type="button" class="my-btn"><span class="my-name">홍길동</span><span class="my-num">(2*****)</span></button>
+                            </div>
+                            <div class="loginout"><button>로그아웃</button></div>
+                        </div>
+                    </header>
+
+                    <div class="page-title-wrap">
+
+                        <div class="inner">
+                            <h2 class="title"><span>IIS 응답 거래</span></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //header -->
+
+                <div class="contents">
+                    <div class="contents-inner">
+                        <div class="content-box">
+
+                            <div class="title-area">
+                                <div class="inner">
+                                    <h3 class="title"><span>로그 조회</span></h3>
+                                </div>
+                                <div class="btn-area">
+                                    <button type="button" class="btn btn-default">초기화</button>
+                                </div>
+                            </div><!-- // title-area -->
+
+                            <!-- 검색 -->
+                            <section class="search-section">
+                                <div class="table-wrap">
+                                    <div class="table-body">
+
+                                        <div class="search-box-wrap">
+                                            <form action="">
+                                                <div class="box-inner">
+                                                    <ul class="box-lists grid-2">
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp01" class="title">
+                                                                    <span>인터페이스</span>
+                                                                </label>
+                                                                <div class="form-wrap">
+
+                                                                    <div class="select-box">
+                                                                        <select class="" id="">
+                                                                            <option value="1" selected>전체</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                        </select>
+                                                                        <i class="arrow"></i>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp02" class="title"> 인터페이스(ID) </label>
+                                                                <div class="form-wrap inp-w  ">
+                                                                    <div class="input-box">
+                                                                        <input type="text" id="inp02" class="inp" value="" placeholder="인터페이스(ID) 입력">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inpDate" class="title">
+                                                                    대상 기간
+                                                                </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="date_set">
+                                                                        <span class="datepicker-box">
+                                                                            <input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" id="">
+                                                                        </span>
+                                                                        <span class="bar">-</span>
+                                                                        <span class="datepicker-box">
+                                                                            <input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" id="">
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="item ">
+                                                            <div class="inner form-box">
+                                                                <label for="inp05" class="title"> 성공여부 </label>
+                                                                <div class="form-wrap">
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio11" name="radio11" checked class="radiobox">
+                                                                        <label for="inp-radio11"><span>전체</span></label>
+                                                                    </div>
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio12" name="radio11" class="radiobox">
+                                                                        <label for="inp-radio12"><span>성공</span></label>
+                                                                    </div>
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="inp-radio13" name="radio11" class="radiobox">
+                                                                        <label for="inp-radio13"><span>실패</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="btn-wrap">
+                                                        <button class="btn btn-dark"><i class="i-search"></i><span>검색</span></button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 리스트 -->
+                            <section class="list-section">
+
+                                <div class="table-wrap">
+                                    <div class="table-body">
+
+                                        <div class="table-inner ">
+                                            <table class="table ">
+                                                <colgroup>
+                                                    <col class="" style="width:18%">
+                                                    <col class="" style="width:18%">
+                                                    <col class="" style="width:10%">
+                                                    <col class="" style="width:12%">
+                                                    <col class="" style="width:12%">
+
+                                                    <col class="" style="width:8%">
+                                                    <col class="" style="width:auto">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="">로그 ID</th>
+                                                        <th class="">로그 시간</th>
+                                                        <th class="">인터페이스</th>
+                                                        <th class="">인터페이스 ID</th>
+                                                        <th class="">최종 수정자</th>
+
+                                                        <th class="">성공여부</th>
+                                                        <th class="">바로가기</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>uuid-5470-2840-1127</td>
+                                                        <td>2023-07-04 08:12:20</td>
+                                                        <td>FEP</td>
+                                                        <td>Ext00000000</td>
+                                                        <td>홍**</td>
+                                                        <td>
+                                                            <div class="flag-wrap"><span class="flag flag-default">성공</span></div>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-xs btn-default">로그상세</button>
+                                                            <button type="button" class="btn btn-xs btn-default">정보조회</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>uuid-5470-2840-1127</td>
+                                                        <td>2023-07-04 08:12:20</td>
+                                                        <td>FEP</td>
+                                                        <td>Ext00000000</td>
+                                                        <td>홍**</td>
+                                                        <td>
+                                                            <div class="flag-wrap"><span class="flag flag-pink">실패</span></div>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-xs btn-default">로그상세</button>
+                                                            <button type="button" class="btn btn-xs btn-default">정보조회</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <div class="table-footer">
+
+                                        <div class="paging-wrap">
+                                            <!-- <a href="#" class="first"></a> -->
+                                            <a href="#" class="pre"></a>
+                                            <ul class="paging">
+                                                <li class="on"><a href="#"><span>1</span></a></li>
+                                                <li><a href="#"><span>2</span></a></li>
+                                                <li><a href="#"><span>3</span></a></li>
+                                            </ul>
+                                            <a href="#" class="next disabled"></a>
+                                            <!-- <a href="#" class="last"></a> -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div><!-- // content-box -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- //con-wrap -->
+
+        <!-- footer -->
+
+    </div>
+</body>
+
+</html>
