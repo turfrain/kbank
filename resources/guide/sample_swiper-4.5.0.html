@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <title>sample_swiper 4.5.0</title>
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.min.css">
+    <!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.min.js"></script>
+</head>
+
+<body class="trp-sample">
+
+	<style>
+		.gallery_view { width: 500px; margin: 0 auto;}
+		.gallery_view .gallery_container {
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+				text-align: center;
+		}
+		.gallery_view .pagination { text-align: center; font-size: 0; line-height: 0;}
+		.gallery_view .pagination .swiper-pagination-bullet { margin:5px 2px; overflow: hidden;
+			width: 8px;height: 8px;display: inline-block;border-radius: 100%;background: #000;opacity: .2;
+			font-size: 0; line-height: 0; text-indent: 100px;
+		}
+		.gallery_view .pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+			opacity: 1;
+			background: #007aff;
+		}
+	</style>
+
+
+	<div class="gallery_view js-gallery_view" style="">
+		<div class="gallery_container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="https://via.placeholder.com/500x300" alt=""></div>
+				<div class="swiper-slide"><img src="https://via.placeholder.com/500x300" alt=""></div>
+				<div class="swiper-slide"><img src="https://via.placeholder.com/500x300" alt=""></div>
+				<div class="swiper-slide"><img src="https://via.placeholder.com/500x300" alt=""></div>
+				<div class="swiper-slide"><img src="https://via.placeholder.com/500x300" alt=""></div>
+				<div class="swiper-slide"><img src="https://via.placeholder.com/500x300" alt=""></div>
+				<div class="swiper-slide"><img src="https://via.placeholder.com/500x300" alt=""></div>
+				<div class="swiper-slide"><img src="https://via.placeholder.com/500x300" alt=""></div>
+			</div>
+			<a href="#" class="prev">Prev</a>
+			<a href="#" class="next">Next</a>
+		</div>
+		<div class="pagination"></div>
+	</div>
+
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+		// Swiper 4.5.0세팅
+		var mySwiperIndex = 0;
+		var mySwiperTotal = 0;
+		var mySwiper = new Swiper('.js-gallery_view .gallery_container',{
+			slidesPerView: 1,	
+			autoplay: {
+				delay: 3000,
+			},
+			loop: true,
+			//followFinger : false,   // 드래그 되지 안으며 이벤트 발생만됨. 
+			threshold : 20,         // 드래그 거리 이상일대 적용
+			pagination: {
+				el: '.js-gallery_view .pagination',
+				/* type: 'fraction',
+				formatFractionCurrent : function($num){
+					mySwiperIndex = $num;
+					console.log("Current : ", mySwiperIndex);
+					return $num;
+				},
+				formatFractionTotal : function($num) {
+					mySwiperTotal = $num;
+					console.log("Total : ", mySwiperTotal);
+					return $num;
+				},
+				renderFraction: function ($currentClass, $totalClass) {
+						return '<span class="' + $currentClass + '"></span>' +
+									'<span class="bar">/</span>' +
+									'<span class="' + $totalClass + '"></span>';
+				} */
+			},
+			paginationClickable: true,
+			navigation: {
+				prevEl: '.js-gallery_view .prev',
+				nextEl: '.js-gallery_view .next',
+			},
+			on: {
+				init: function () { /* do something */ 
+					console.log( "Total" , $(".js-gallery_view .pagination .swiper-pagination-bullet").length);
+				},
+				slideChange:function() { /* 슬라이드 바뀌면 실행 */ 
+				},
+				transitionEnd:function(){ 	// 움직임이 끝나면 실행
+					console.log( "움직임 끝"  );
+				},
+			}
+
+		})
+
+		// 좌우버튼커스텀
+		/* 			
+		$('.prev').on('click', function(e){
+			e.preventDefault();
+			mySwiper.slidePrev();
+		})
+		$('.next').on('click', function(e){
+			e.preventDefault();
+			mySwiper.slideNext();
+		})
+		*/
+
+		// 컨텐츠에 마우스 올리면 일시정지
+		$(".js-gallery_view .gallery_container").hover(function(){
+			mySwiper.autoplay.stop();
+		},
+		function(){
+			mySwiper.autoplay.start();
+		})
+
+
+		/*  ============== Methods 
+		mySwiper.activeIndex : 루푸아닐때
+		mySwiper.realIndex   : 루푸일때
+		
+		*/
+		
+
+
+
+		
+
+
+	})
+	</script>
+
+</body>
+</html>
