@@ -1,18 +1,5 @@
 "use strict";
-/* =============================== debug.js ========================= */
 
-var TRP = {
-    ip: "218.236.25.186"
-};
-
-function trpMode($option) {
-    document.designMode = $option;
-}
-
-/* ready */
-/* // =============================== debug.js ========================= */
-/* weinre --boundHost 218.236.25.186 --httpPort 7257 */
-//setTimeout( function(){ TRP.debug("hasdfai3") }, 1000);;"use strict";
 function headerUiController() {
     var _depth1Item, el;
     return function() {
@@ -82,38 +69,6 @@ function tab_box() {
 /* === ready === */
 
 $(function() {
-    var TRP;
-    $("body").hasClass("trp-sample") || ((TRP = window.TRP).IS_DEBUG = !0, TRP.IS_REMOTE = !1, 
-    TRP.time = "", TRP.arr = [], TRP.debug = function(msg, $b) {
-        $b = $b || "", msg && ($("#trp-debug").length || ($("body").append('<div id="trp-debug" style="position:fixed;bottom:0;left:0;z-index:999999;color:#000;font-size:14px;"></div>'), 
-        $("body").addClass("body")), 0 !== TRP.arr.indexOf(msg) && (1 == $b ? TRP.arr.unshift(msg) : TRP.arr.unshift('<span class="trp-toast_message" style="display:inline-block; padding:2px 5px; border:1px solid #999;  background-color:rgba(0,0,0,.1)">' + msg + "</span>")), 
-        $("#trp-debug").html(TRP.arr.join("<br>")), "" == TRP.time) && (TRP.time = setInterval(function() {
-            1 < TRP.arr.length && (TRP.arr.splice(TRP.arr.length - 2, 1), $("#trp-debug").html(TRP.arr.join("<br>")));
-        }, 3e3));
-    }, TRP.IS_REMOTE && $("head").append('<script src="http://' + TR.ip + ':7257/target/target-script-min.js#anonymous"><\/script>'), 
-    TRP.IS_DEBUG && TRP.debug('<a href="/guide/path.html" style="display:inline-block; background-color:rgba(0,0,0,.6);padding:0.5em;color:red;">Ξ</a>', !0), 
-    $(".guide .item-inner pre").show(), 
-    /* code 생성 */
-    $("samp.js-source").each(function($index) {
-        var _codeAll, _codeJs, _codeCss;
-        function codeSourceFn($this, $lang, $code) {
-            var _codeCover = '<pre data-sample="code" style="display:block"><button class="codelabel-btn">' + $lang + ' 코드</button><code class="' + $lang + '"></code></pre>'; /* 커버 삽입 */
-            $($this).parents(".item-inner").append(_codeCover), /* 커버에 코드 삽입 */
-            $($this).siblings("pre").find("code." + $lang).append($code).show(), 
-            $($this).siblings("pre").find("code").hide();
-        }
-        _codeJs = (_codeAll = $(this).clone()).find("script").remove(), _codeCss = _codeAll.find("style").remove(), 
-        codeSourceFn(this, "html", _codeAll.html()), _codeJs.length && codeSourceFn(this, "js", _codeJs.html()), 
-        _codeCss.length && codeSourceFn(this, "css", _codeCss.html());
-    }), $("pre").find(".codelabel-btn").on("click", function() {
-        $(this).toggleClass("show"), $(this).hasClass("show") ? $(this).siblings("code").show() : $(this).siblings("code").hide();
-    }), "undefined" != typeof hljs && ($("code.html").each(function($i) {
-        var _str = (_str = $(this).html()).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        $(this).empty(), $(this).append(_str);
-    }), hljs.initHighlightingOnLoad(), hljs.configure({
-        tabReplace: "    "
-    })));
-}), $(function() {
     leftAccordionMenu(), // 싸이드 메뉴
     tabs(), tab_box();
 });
@@ -246,6 +201,14 @@ function PubFORM() {
     };
 }
 
+function sum1(a, b) {
+    return a + b;
+}
+
+function multiply(a, ccc) {
+    return a + ccc;
+}
+
 document.documentElement.style.setProperty("--vh", "".concat(vh, "px")), $(window).on("resize", function() {
     vh = .01 * window.innerHeight, document.documentElement.style.setProperty("--vh", "".concat(vh, "px"));
 }), $(function() {
@@ -255,5 +218,6 @@ document.documentElement.style.setProperty("--vh", "".concat(vh, "px")), $(windo
     window.PubFORM.select2Set(), 
     //window.PubFORM.scrollbaroverlaySet();
     window.PubFORM.datepickerSet(), window.PubFORM.tooltipSet();
-});
+}), console.log(">>>>>>>>>>>>> :: 40"), console.log(">>>>>>>>>>>>> :: " + sum1(10, 30)), 
+console.log(">>>>>>>>>>>>> :: " + multiply(10, 30));
 //# sourceMappingURL=maps/common_pub.js.map
