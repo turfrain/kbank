@@ -4,7 +4,7 @@
 <head>
     <!-- header -->
     <meta charset="UTF-8">
-    <title>IIS 응답 거래</title>
+    <title>자료실(게시판) 조회 화면</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
     <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
@@ -17,7 +17,7 @@
     <script src="/resources/static/js/common_pub.js"></script>
 </head>
 
-<body class="">
+<body>
     <div class="wrapper pageclass">
 
         <!-- skip -->
@@ -73,7 +73,7 @@
             </div>
             <!-- //gnb_left -->
 
-            <div #id="container" class="container">
+            <div id="#container" class="container">
                 <!-- header -->
 
 
@@ -93,7 +93,7 @@
                     <div class="page-title-wrap">
 
                         <div class="inner">
-                            <h2 class="title"><span>IIS 응답 거래</span></h2>
+                            <h2 class="title"><span>게시판</span></h2>
                         </div>
 
                     </div>
@@ -105,18 +105,110 @@
                     <div class="contents-inner">
                         <div class="content-box">
 
-                            <a href="#" class="btn btn-dark js-popup_default_alert1-btn"><span>IIS 응답 거래 시뮬레이션 정보 내보내기</span></a>
+                            <div class="title-area">
+                                <div class="inner">
+                                    <h3 class="title"><span>자료 조회</span></h3>
+                                </div>
+                                <div class="btn-area">
+                                    <button type="button" class="btn btn-dark">
+                                        <i class="i-menu"></i>
+                                        <span class="">목록</span>
+                                    </button>
+                                    <button type="button" class="btn btn-dark">
+                                        <i class="i-trash"></i>
+                                        <span class="">삭제</span>
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <i class="i-edit"></i>
+                                        <span class="">수정</span>
+                                    </button>
+                                </div>
+                            </div><!-- // title-area -->
 
-                        </div>
+
+                            <!-- 조회 -->
+                            <section class="edit-section">
+
+                                <div class="table-wrap type-edit">
+                                    <div class="table-body">
+
+                                        <div class="table-inner">
+
+                                            <table class="form_table">
+                                                <colgroup>
+                                                    <col style="width:230px">
+                                                    <col style="width:35%">
+                                                    <col style="width:230px">
+                                                    <col style="width:35%">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            <span>작성자</span>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="inp02" class="inp" value="작성자" placeholder="작성자" disabled>
+                                                            </div>
+                                                        </td>
+                                                        <th>
+                                                            <span>작성일시</span>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="inp02" class="inp" value="2023-07-01 15:00" placeholder="" disabled>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>제목</span>
+                                                            <em class="require"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td colspan="3">
+                                                            <div class="input-box">
+                                                                <input type="text" id="inp02" class="inp" value="제목" placeholder="제목" disabled>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="vat">
+                                                            <span>내용</span>
+                                                            <em class="require"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td colspan="3">
+                                                            <div class="input-box" style="height:280px">
+                                                                <textarea class="pd10" name="" id="" cols="30" rows="10" placeholder="내용" disabled>내용</textarea>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><span>첨부파일</span></th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="inp02" class="inp" value="kbank_202307.JSON" placeholder="" disabled>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </section>
+
+                        </div><!-- // content-box -->
+
                     </div>
                 </div>
 
             </div>
 
-
-
         </div>
-        <!-- //container -->
+        <!-- //con-wrap -->
 
         <!-- footer -->
 
@@ -124,107 +216,6 @@
 
 
 
-
-    <div id="popup_default_alert1-wrap" class="trp popupfixed-wrap default_alert">
-        <div class="popup-dim"></div>
-        <div class="popup-align pop-md">
-            <div class="popup-vertical">
-                <div class="popup-layer" style="">
-
-                    <div class="pop-panel">
-                        <div class="pop-head">
-                            <a class="btn_close icon-pop_colse_24 js-closepop" href="#">X</a>
-                            <div class="pop_tit">IIS 응답 거래 시뮬레이션 정보 내보내기</div>
-                        </div>
-                        <div class="pop-body">
-                            <section class="section">
-
-                                <div class="table-wrap">
-                                    <div class="table-body">
-
-                                        <div class="table-inner">
-                                            <table class="form_table table_sidepadding">
-                                                <colgroup>
-                                                    <col style="width:250px">
-                                                    <col style="width:70%">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th>
-                                                            <span>파일명</span>
-                                                        </th>
-                                                        <td>
-                                                            <div class="input-box">
-                                                                <input type="text" id="inp02" class="inp" value="" placeholder="파일명 입력">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>
-                                                            <span>파일 종류</span>
-                                                        </th>
-                                                        <td>
-                                                            <div class="form_set h40">
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-1" name="radiobox1" checked="" class="radiobox">
-                                                                    <label for="radiobox1-1"><span>JSON</span></label>
-                                                                </div>
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-2" name="radiobox1" class="radiobox">
-                                                                    <label for="radiobox1-2"><span>XML</span></label>
-                                                                </div>
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-3" name="radiobox1" class="radiobox">
-                                                                    <label for="radiobox1-3"><span>JsEXCEL</span></label>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </section>
-                        </div>
-                        <div class="pop-foot">
-
-                            <div class="btn-area jc-end">
-                                <button type="button" class="btn btn-primary"><i class="icon-export_16"></i><span>내보내기</span></button>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        var popup_msg_alert1 = $(".js-popup_msg_alert1-btn").trpLayerFixedPopup("#popup_msg_alert1-wrap");
-        $(popup_msg_alert1.getBtn).on("click", function($e) {
-            $e.preventDefault();
-            popup_msg_alert1.open(this); // or false   
-        });
-        $("body").on("click", "#popup_msg_alert1-wrap .js-closepop, #popup_msg_alert1-wrap .popup-dim", function($e) {
-            $e.preventDefault();
-            popup_msg_alert1.close();
-        });
-
-        var popup_default_alert1 = $(".js-popup_default_alert1-btn").trpLayerFixedPopup("#popup_default_alert1-wrap");
-        $(popup_default_alert1.getBtn).on("click", function($e) {
-            $e.preventDefault();
-            popup_default_alert1.open(this); // or false   
-        });
-        $("body").on("click", "#popup_default_alert1-wrap .js-closepop, #popup_default_alert1-wrap .popup-dim", function($e) {
-            $e.preventDefault();
-            popup_default_alert1.close();
-        });
-    </script>
 
 </body>
 

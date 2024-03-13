@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
     <link rel="stylesheet" href="/resources/static/css/common_pub.css">
     <!--[if lt IE 9]>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/resources/static/js/library/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
 <![endif]-->
     <script src="/resources/static/js/library/jquery.min.js"></script>
     <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
@@ -34,7 +34,12 @@
             <!-- gnb_left -->
             <div class="left-area js-left_area open">
                 <div class="inner">
-                    <h1><a href="/"><img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank"></a></h1>
+                    <h1>
+                        <a href="/">
+                            <span class="logo_desc">Interface <br>Integration <br>Simulator</span>
+                            <img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank">
+                        </a>
+                    </h1>
                     <menu class="left-menu">
                         <!--  [D] depth1 class: active-->
                         <ul class="menu js-accordion_menu">
@@ -149,7 +154,7 @@
                                             <div class="box-inner">
                                                 <form action="">
                                                     <ul class="box-lists grid-2">
-                                                        <li class="item item">
+                                                        <li class="item">
                                                             <div class="inner form-box">
                                                                 <label for="inp01" class="title">
                                                                     인터페이스
@@ -167,7 +172,7 @@
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li class="item item">
+                                                        <li class="item">
                                                             <div class="inner form-box">
                                                                 <label for="inp02" class="title">
                                                                     인터페이스(ID)
@@ -180,7 +185,7 @@
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li class="item item">
+                                                        <li class="item">
                                                             <div class="inner form-box">
                                                                 <label for="inpDate" class="title">
                                                                     시뮬레이션 기간
@@ -190,10 +195,12 @@
                                                                     <div class="date_set">
                                                                         <span class="datepicker-box">
                                                                             <input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" id="">
+                                                                            <i></i>
                                                                         </span>
                                                                         <span class="bar">-</span>
                                                                         <span class="datepicker-box">
                                                                             <input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" id="">
+                                                                            <i></i>
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -251,7 +258,7 @@
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li class="item item">
+                                                        <li class="item ">
                                                             <div class="inner form-box">
                                                                 <label for="inp04" class="title">
                                                                     결과 수신 프로토콜
@@ -268,11 +275,11 @@
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li class="item item">
+                                                        <li class="item ">
                                                             <div class="inner form-box">
                                                                 <label for="inp06" class="title">
                                                                     사용 여부
-                                                                    <em class="require"><span class="hidden">필수</span></em>
+                                                                    <em class="require ml5"><span class="hidden">필수</span></em>
                                                                 </label>
                                                                 <div class="form-wrap">
                                                                     <div class="radiobox-wrap inlineblock">
@@ -494,7 +501,7 @@
                                 <div class="simulation-from">
                                     <form action="">
                                         <ul class="lists">
-                                            <li class="item item">
+                                            <li class="item">
                                                 <div class="inner form-box">
                                                     <label for="inp01" class="title">기본값(상수)</label>
                                                     <div class="form-wrap">
@@ -510,18 +517,17 @@
                                                     <div class="form-wrap">
 
                                                         <div class="select-box">
-                                                            <select class="" id="">
+                                                            <select class="select2Basic" id="">
                                                                 <option value="" selected disabled>변환규칙</option>
                                                                 <option value="1">COPY</option>
                                                                 <option value="2">NOT SET</option>
                                                             </select>
-                                                            <i class="arrow"></i>
                                                         </div>
 
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="item item">
+                                            <li class="item">
                                                 <div class="inner form-box">
                                                     <label for="inp03" class="title">파라미터</label>
                                                     <div class="form-wrap">
@@ -531,18 +537,18 @@
                                                     </div>
                                                 </div>
                                             </li>
+
                                             <li class="item ">
                                                 <div class="inner form-box">
                                                     <label for="inp04" class="title">빈값 채우기</label>
                                                     <div class="form-wrap">
 
                                                         <div class="select-box">
-                                                            <select class="" id="">
+                                                            <select class="select2Basic" id="">
                                                                 <option value="" selected disabled>선택</option>
                                                                 <option value="1">BLANK</option>
                                                                 <option value="2">0</option>
                                                             </select>
-                                                            <i class="arrow"></i>
                                                         </div>
 
                                                     </div>
@@ -554,12 +560,11 @@
                                                     <div class="form-wrap">
 
                                                         <div class="select-box">
-                                                            <select class="" id="">
+                                                            <select class="select2Basic" id="">
                                                                 <option value="" selected disabled>선택</option>
                                                                 <option value="1">우측정열</option>
                                                                 <option value="2">좌측정열</option>
                                                             </select>
-                                                            <i class="arrow"></i>
                                                         </div>
 
                                                     </div>

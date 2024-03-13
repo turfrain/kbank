@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sample_bxslider</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.min.css">
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+
+    <!--   -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+    <script type="text/javascript" src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+    <script type="text/javascript" src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+    <!-- <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.js"></script> -->
+
+</head>
+
+<body class="trp-sample">
+
+    <div class="grid_table pd10">
+        <div id="grid1"></div>
+    </div>
+    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+    <script type="text/javascript" src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+    <script type="text/javascript" src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+    <script>
+        var grid1Data = [{
+                id: '10012',
+                city: 'Seoul',
+                country: 'South Korea'
+            },
+            {
+                id: '10013',
+                city: 'Tokyo',
+                country: 'Japan'
+            },
+            {
+                id: '10014',
+                city: 'London',
+                country: 'England'
+            },
+            {
+                id: '10015',
+                city: 'Ljubljana',
+                country: 'Slovenia'
+            },
+            {
+                id: '10016',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+            {
+                id: '10017',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+            {
+                id: '10018',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+
+
+            {
+                id: '10012',
+                city: 'Seoul',
+                country: 'South Korea'
+            },
+            {
+                id: '10013',
+                city: 'Tokyo',
+                country: 'Japan'
+            },
+            {
+                id: '10014',
+                city: 'London',
+                country: 'England'
+            },
+            {
+                id: '10015',
+                city: 'Ljubljana',
+                country: 'Slovenia'
+            },
+            {
+                id: '10016',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+            {
+                id: '10017',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+            {
+                id: '10018',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            }
+        ];
+        var grid1 = new tui.Grid({
+            el: document.getElementById('grid1'),
+            data: grid1Data,
+            rowHeight: 50,
+            scrollX: false,
+            scrollY: false,
+            //rowHeaders: ['rowNum'], // 좌측 넘버추가
+            //minBodyHeight: 30,
+            pageOptions: {
+                useClient: true,
+                perPage: 4
+            },
+            columns: [{
+                    header: 'id',
+                    name: 'id'
+                },
+                {
+                    header: 'city',
+                    name: 'city'
+                },
+                {
+                    header: 'country',
+                    name: 'country'
+                },
+            ]
+        });
+    </script>
+
+
+    <div class="gridlist_table pd10 mt50">
+        <div id="grid2"></div>
+    </div>
+    <script>
+        var grid2Data = [{
+                id: '1',
+                field_en: 'strd_tlgr_vrsn',
+                field_kr: '전문길이',
+                type: 'Number',
+                length: '100',
+                input: '-',
+            },
+            {
+                id: '2',
+                field_en: 'strd_tlgr_vrsn',
+                field_kr: '전문길이',
+                type: 'Number',
+                length: '100',
+                input: '-',
+            },
+            {
+                id: '3',
+                field_en: 'strd_tlgr_vrsn',
+                field_kr: '전문길이',
+                type: 'Number',
+                length: '100',
+                input: '-',
+            },
+            {
+                id: '4',
+                field_en: 'strd_tlgr_vrsn',
+                field_kr: '전문길이',
+                type: 'Number',
+                length: '100',
+                input: '-',
+            },
+            {
+                id: '5',
+                field_en: 'strd_tlgr_vrsn',
+                field_kr: '전문길이',
+                type: 'Number',
+                length: '100',
+                input: '-',
+            },
+
+        ];
+        var grid2 = new tui.Grid({
+            el: document.getElementById('grid2'),
+            data: grid2Data,
+            rowHeight: 50,
+            scrollX: false,
+            scrollY: false,
+            //rowHeaders: ['rowNum'], // 좌측 넘버추가
+            //minBodyHeight: 30,
+            /* pageOptions: {
+              useClient: true,
+              perPage: 4
+            }, */
+            columns: [{
+                    header: '번호',
+                    name: 'id',
+                    align: "center",
+                    width: 80,
+                },
+                {
+                    header: '필드 명(영문)',
+                    name: 'field_en'
+                },
+                {
+                    header: '필드 명(한글)',
+                    name: 'field_kr'
+                },
+                {
+                    header: '유형',
+                    name: 'type',
+                    align: "center",
+                    width: 120,
+                },
+                {
+                    header: '길이',
+                    name: 'length',
+                    align: "center",
+                    width: 120,
+                },
+                {
+                    header: '입력',
+                    name: 'input',
+                    align: "center",
+                    width: 120,
+                },
+            ]
+        });
+    </script>
+
+</body>
+
+</html>

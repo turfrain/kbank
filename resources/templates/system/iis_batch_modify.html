@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <title>배치 관리 - CRON &amp; SIMPLE</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.css">
+    <!--[if lt IE 9]>
+	<script src="/resources/static/js/library/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.js"></script>
+</head>
+
+<body>
+    <div class="wrapper pageclass">
+
+        <!-- skip -->
+
+        <div class="skip_nav">
+            <a href="#leftmenu" class="goto-menu">주메뉴 바로가기</a>
+            <a href="#container" class="goto-content">본문 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <!-- con-wrap -->
+        <div class="con-wrap">
+
+            <!-- gnb_left -->
+            <div class="left-area js-left_area open">
+                <div class="inner">
+                    <h1>
+                        <a href="/">
+                            <span class="logo_desc">Interface <br>Integration <br>Simulator</span>
+                            <img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank">
+                        </a>
+                    </h1>
+                    <menu class="left-menu">
+                        <!--  [D] depth1 class: active-->
+                        <ul class="menu js-accordion_menu">
+                            <li class="depth1 m01">
+                                <a href="#n" class="menu_d1 js-acc_btn">대시보드</a>
+                            </li>
+                            <li class="depth1 m02">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 응답 거래</a>
+                                <ul class="depth2">
+                                    <li class="active"><a href="#n">전문포맷관리</a></li>
+                                    <li><a href="#n">정보조회</a></li>
+                                    <li><a href="#n">정보등록</a></li>
+                                    <li><a href="#n">로그조회</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1 m03">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 발신 거래</a>
+                            </li>
+                            <li class="depth1 m04">
+                                <a href="#n" class="menu_d1 js-acc_btn">게시판</a>
+                            </li>
+                            <li class="depth1 m05">
+                                <a href="#n" class="menu_d1 js-acc_btn">시스템 정보</a>
+                            </li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="menu_closed js-menu_closed">
+                    <button type="button"><span class="hidden">닫기</span></button>
+                </div>
+            </div>
+            <!-- //gnb_left -->
+
+            <div id="#container" class="container">
+                <!-- header -->
+
+
+                <div class="header-wrap">
+                    <header class="header">
+                        <div class="header-area">
+                            <div class="my-alram">
+                                <button type="button" class="alram-btn"><span class="txt">알림</span><span class="on"></span></button>
+                            </div>
+                            <div class="my-info">
+                                <button type="button" class="my-btn"><span class="my-name">홍길동</span><span class="my-num">(2*****)</span></button>
+                            </div>
+                            <div class="loginout"><button>로그아웃</button></div>
+                        </div>
+                    </header>
+
+                    <div class="page-title-wrap">
+
+                        <div class="inner">
+                            <h2 class="title"><span>시스템 관리</span></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //header -->
+
+                <div class="contents">
+                    <div class="contents-inner">
+                        <div class="content-box">
+
+                            <div class="title-area">
+                                <div class="inner">
+                                    <h3 class="title"><span>배치관리</span></h3>
+                                </div>
+                                <div class="btn-area">
+                                    <button type="button" class="btn btn-dark">
+                                        <i class="i-menu"></i>
+                                        <span class="">목록</span>
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <i class="i-save"></i>
+                                        <span class="">저장</span>
+                                    </button>
+                                </div>
+                            </div><!-- // title-area -->
+
+                            <section class="tabs-section">
+                                <div class="tabcontrol-wrap">
+
+                                    <div class="tabs-menu pageTabs js-topTabs">
+                                        <ul class="tabs">
+                                            <li class="tab active">
+                                                <a href="#"><span>배치 현황</span></a>
+                                            </li>
+                                            <li class="tab">
+                                                <a href="#"><span>실행이력</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <!-- 배치정보 수정 -->
+                            <section class="edit-section">
+                                <div class="table-wrap type-edit">
+                                    <div class="table-body">
+                                        <div class="table-inner">
+
+                                            <form action="">
+                                                <table class="form_table">
+                                                    <colgroup>
+                                                        <col style="width:280px">
+                                                        <col style="width:30%">
+                                                        <col style="width:280px">
+                                                        <col style="width:30%">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>
+                                                                <span>배치 ID</span>
+                                                            </th>
+                                                            <td>
+                                                                <div class="input-box">
+                                                                    <input type="text" id="" class="inp" value="batch001" placeholder="배치 ID" disabled>
+                                                                </div>
+                                                            </td>
+                                                            <th>
+                                                                <span>배치 명</span>
+                                                            </th>
+                                                            <td>
+                                                                <div class="input-box">
+                                                                    <input type="text" id="" class="inp" value="인사정보 통기화" placeholder="">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <span>트리거 타입</span>
+                                                            </th>
+                                                            <td>
+                                                                <div class="form_set h40 js-batch_trigger">
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="radiobox1-1" name="radiobox1" checked="" class="radiobox" value="CRON">
+                                                                        <label for="radiobox1-1"><span>CRON</span></label>
+                                                                    </div>
+                                                                    <div class="radiobox-wrap inlineblock">
+                                                                        <input type="radio" id="radiobox1-2" name="radiobox1" class="radiobox" value="SIMPLE">
+                                                                        <label for="radiobox1-2"><span>SIMPLE</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <th>
+                                                                <span class="js-batch_name">배치 실행 시간 (cron 표현식)</span>
+                                                            </th>
+                                                            <td>
+                                                                <div class="input-box">
+                                                                    <input type="text" id="" class="inp js-batch_val" value="*****" placeholder="">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+
+
+                        </div><!-- // content-box -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- //con-wrap -->
+
+        <!-- footer -->
+
+    </div>
+
+    <script>
+        $(".js-batch_trigger input[name='radiobox1']").on("change", function($e) {
+            var _val = $(this).val();
+            console.log("_val : ", _val)
+            if (_val == "CRON") {
+                $(".js-batch_name").text("배치 실행 시간 (cron 표현식)")
+                $(".js-batch_val").val("*****")
+            } else {
+                $(".js-batch_name").text("배치 실행 시간 (주기)")
+                $(".js-batch_val").val("5")
+            }
+
+        })
+    </script>
+
+
+</body>
+
+</html>

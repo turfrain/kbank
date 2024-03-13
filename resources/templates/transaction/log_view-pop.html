@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <title>IIS 로그 상세 조회(팝업)</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.css">
+    <!--[if lt IE 9]>
+	<script src="/resources/static/js/library/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+    <script src="/resources/static/js/library/jquery.min.js"></script>
+    <script src="/resources/static/js/library/jquerylibrary.min.js"></script>
+    <script src="/resources/static/js/common_pub.js"></script>
+</head>
+
+<body>
+    <div class="wrapper pageclass">
+
+        <!-- skip -->
+
+        <div class="skip_nav">
+            <a href="#leftmenu" class="goto-menu">주메뉴 바로가기</a>
+            <a href="#container" class="goto-content">본문 바로가기</a>
+        </div>
+        <!-- //skip -->
+
+        <!-- con-wrap -->
+        <div class="con-wrap">
+
+            <!-- gnb_left -->
+            <div class="left-area js-left_area open">
+                <div class="inner">
+                    <h1>
+                        <a href="/">
+                            <span class="logo_desc">Interface <br>Integration <br>Simulator</span>
+                            <img src="/resources/static/images/common/logo.png" alt="dev pace maker Kbank">
+                        </a>
+                    </h1>
+                    <menu class="left-menu">
+                        <!--  [D] depth1 class: active-->
+                        <ul class="menu js-accordion_menu">
+                            <li class="depth1 m01">
+                                <a href="#n" class="menu_d1 js-acc_btn">대시보드</a>
+                            </li>
+                            <li class="depth1 m02">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 응답 거래</a>
+                                <ul class="depth2">
+                                    <li class="active"><a href="#n">전문포맷관리</a></li>
+                                    <li><a href="#n">정보조회</a></li>
+                                    <li><a href="#n">정보등록</a></li>
+                                    <li><a href="#n">로그조회</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth1 m03">
+                                <a href="#n" class="menu_d1 js-acc_btn">IIS 발신 거래</a>
+                            </li>
+                            <li class="depth1 m04">
+                                <a href="#n" class="menu_d1 js-acc_btn">게시판</a>
+                            </li>
+                            <li class="depth1 m05">
+                                <a href="#n" class="menu_d1 js-acc_btn">시스템 정보</a>
+                            </li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="menu_closed js-menu_closed">
+                    <button type="button"><span class="hidden">닫기</span></button>
+                </div>
+            </div>
+            <!-- //gnb_left -->
+
+            <div id="#container" class="container">
+                <!-- header -->
+
+
+                <div class="header-wrap">
+                    <header class="header">
+                        <div class="header-area">
+                            <div class="my-alram">
+                                <button type="button" class="alram-btn"><span class="txt">알림</span><span class="on"></span></button>
+                            </div>
+                            <div class="my-info">
+                                <button type="button" class="my-btn"><span class="my-name">홍길동</span><span class="my-num">(2*****)</span></button>
+                            </div>
+                            <div class="loginout"><button>로그아웃</button></div>
+                        </div>
+                    </header>
+
+                    <div class="page-title-wrap">
+
+                        <div class="inner">
+                            <h2 class="title"><span>IIS 응답 거래</span></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //header -->
+
+                <div class="contents">
+                    <div class="contents-inner">
+                        <div class="content-box">
+
+                            <div class="title-area">
+                                <div class="inner">
+                                    <h3 class="title"><span>로그 조회</span></h3>
+                                </div>
+                                <div class="btn-area">
+                                    <button type="button" class="btn btn-default"> <span class="">초기화</span></button>
+                                </div>
+                            </div><!-- // title-area -->
+
+
+                            <div class="btn-box">
+                                <button type="button" class="btn btn-default js-popup_default1"><span>로그상세-팝업</span></button>
+
+                                <a href="/resources/templates/transaction/log_view.html" class="btn btn-default" onclick="window.open(this.href, '_blank','width=1000, height=720, toolbars=no, scrollbars=yes'); return false;"><span>로그상세-window팝업</span></a>
+                            </div>
+
+                        </div><!-- // content-box -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- //con-wrap -->
+
+        <!-- footer -->
+
+
+
+
+
+        <div id="popup_default1-wrap" class="trp popupfixed-wrap default_alert">
+            <div class="popup-dim"></div>
+            <div class="popup-align pop-lg">
+                <div class="popup-vertical">
+                    <div class="popup-layer">
+
+                        <div class="pop-panel">
+                            <div class="pop-head">
+                                <a class="btn_close icon-pop_colse_24 js-closepop" href="#">X</a>
+                                <div class="pop_tit">로그 상세</div>
+                            </div>
+                            <div class="pop-body">
+
+                                <div class="gray-area pd20">
+
+                                    <div class="table-wrap type-gray">
+                                        <div class="table-body">
+
+                                            <div class="table-inner ">
+                                                <table class="table ">
+                                                    <colgroup>
+                                                        <col class="" width="20%">
+                                                        <col class="" width="30%">
+                                                        <col class="" width="20%">
+                                                        <col class="" width="*">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>로그 ID</th>
+                                                            <td>uuid-5470-2840-1127</td>
+                                                            <th>로그시간</th>
+                                                            <td>2023-07-04 08:12:20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>인터페이스</th>
+                                                            <td>FEP-계정계-수신1</td>
+                                                            <th>인터페이스 ID</th>
+                                                            <td><a href="#" class="linkline">Ext00000000</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>인터페이스 명</th>
+                                                            <td><a href="#" class="linkline">온라인 조회</a></td>
+                                                            <th>성공여부</th>
+                                                            <td><span class="colorP">성공</span>
+                                                                <!-- <span class="flag flag-default">성공</span> -->
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- 텝메뉴 -->
+                                <div class="mt20">
+                                    <div class="tabs-menu js-topTabs">
+                                        <ul class="tabs  ">
+                                            <li class="tab active" data-tabidx="tabpop-idx_1" data-tabcon="popTabs-conitem">
+                                                <a href="#tab_p1"><span>요청 전문</span></a>
+                                            </li>
+                                            <li class="tab" data-tabidx="tabpop-idx_2" data-tabcon="popTabs-conitem">
+                                                <a href="#tab_p2"><span>응답 전문</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- 공통부 -->
+                                <section class="popTabs-conitem tabpop-idx_1">
+                                    <div class="title-area mt40 mb20">
+                                        <h4 class="title-h3">공통부</h4>
+                                    </div>
+                                    <div class="text-box-wrap">
+                                        <div class="text-box">
+                                            <div id="" class="tab-content_tiem">
+
+                                                <div class="inner pd0">
+                                                    <div class="input-box bd0 h100">
+                                                        <textarea class="pd0" name="" id="" cols="30" rows="10">
+color: var(--gray-600-aaaaaa-font, #AAA);     font-family: Pretendard;     font-size: 14px;    font-style: normal;    font-weight: 400;   line-height: 20px; /* 142.857% */     color: var(--gray-600-aaaaaa-font, #AAA);     font-family: Pretendard;     font-size: 14px;    font-style: normal;    font-weight: 400;   line-height: 20px; /* 142.857% */
+color: var(--gray-600-aaaaaa-font, #AAA);     font-family: Pretendard;     font-size: 14px;    font-style: normal;    font-weight: 400;   line-height:                               
+                            </textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="btn-area jc-end">
+                                                    <button type="button" class="btn btn-dark">
+                                                        <i class="i-branch"></i><span>입력</span>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-wrap type2 mt20">
+                                        <div class="table-header">
+
+                                            <div class="table-title-area">
+                                                <div class="btn-area right">
+                                                    <button type="button" class="btn btn-icon btn-default">
+                                                        <i class="i-max"></i>
+                                                        <span class="hidden">버튼</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="table-body">
+
+                                            <div class="table-inner bd0">
+                                                <div class="gridlist_table">
+                                                    <div id="grid2_1"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- 개별부 -->
+                                <section class="popTabs-conitem tabpop-idx_1">
+                                    <div class="title-area mt40 mb20">
+                                        <h4 class="title-h3">개별부</h4>
+                                    </div>
+                                    <div class="text-box-wrap">
+                                        <div class="text-box">
+                                            <div id="" class="tab-content_tiem">
+
+                                                <div class="inner pd0">
+                                                    <div class="input-box bd0 h100">
+                                                        <textarea class="pd0" name="" id="" cols="30" rows="10">
+color: var(--gray-600-aaaaaa-font, #AAA);     font-family: Pretendard;     font-size: 14px;    font-style: normal;    font-weight: 400;   line-height: 20px; /* 142.857% */     color: var(--gray-600-aaaaaa-font, #AAA);     font-family: Pretendard;     font-size: 14px;    font-style: normal;    font-weight: 400;   line-height: 20px; /* 142.857% */
+color: var(--gray-600-aaaaaa-font, #AAA);     font-family: Pretendard;     font-size: 14px;    font-style: normal;    font-weight: 400;   line-height:                               
+                            </textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="btn-area jc-end">
+                                                    <button type="button" class="btn btn-dark">
+                                                        <i class="i-branch"></i><span>입력</span>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-wrap type2 mt20">
+                                        <div class="table-header">
+
+                                            <div class="table-title-area">
+                                                <div class="btn-area right">
+                                                    <button type="button" class="btn btn-icon btn-default">
+                                                        <i class="i-max"></i>
+                                                        <span class="hidden">버튼</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="table-body">
+
+                                            <div class="table-inner bd0">
+                                                <div class="gridlist_table">
+                                                    <div id="grid2_2"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="table-wrap type2 mt20">
+                                </section>
+
+                                <!-- 오류 내용 -->
+                                <section class="popTabs-conitem tabpop-idx_1">
+                                    <div class="title-area mt40 mb20">
+                                        <h4 class="title-h3">오류 내용</h4>
+                                    </div>
+                                    <div class="text-box-wrap">
+
+                                        <div class="text-box">
+                                            <div id="" class="tab-content_tiem">
+
+
+                                                <div class="inner pd0 scroll-type scroll-sm h100">
+                                                    오류내용 노출
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+
+
+
+                                <!-- 공통부 -->
+                                <section class="popTabs-conitem tabpop-idx_2" style="display: none;">
+                                    <div class="title-area mt40 mb20">
+                                        <h4 class="title-h3">공통부</h4>
+                                    </div>
+                                    <div class="text-box-wrap">
+                                        <div class="text-box">
+                                            <div id="" class="tab-content_tiem">
+
+                                                <div class="inner pd0">
+                                                    <div class="input-box bd0 h100">
+                                                        <textarea class="pd0" name="" id="" cols="30" rows="10">
+소스코드                              
+                            </textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="btn-area jc-end">
+                                                    <button type="button" class="btn btn-dark">
+                                                        <i class="i-branch"></i><span>입력</span>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-wrap type2 mt20">
+                                        <div class="table-header">
+
+                                            <div class="table-title-area">
+                                                <div class="btn-area right">
+                                                    <button type="button" class="btn btn-icon btn-default">
+                                                        <i class="i-max"></i>
+                                                        <span class="hidden">버튼</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="table-body">
+
+                                            <div class="table-inner bd0">
+                                                <div class="gridlist_table">
+                                                    <div id="grid3_1"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- 개별부 -->
+                                <section class="popTabs-conitem tabpop-idx_2" style="display: none;">
+                                    <div class="title-area mt40 mb20">
+                                        <h4 class="title-h3">개별부</h4>
+                                    </div>
+                                    <div class="text-box-wrap">
+                                        <div class="text-box">
+                                            <div id="" class="tab-content_tiem">
+
+                                                <div class="inner pd0">
+                                                    <div class="input-box bd0 h100">
+                                                        <textarea class="pd0" name="" id="" cols="30" rows="10">
+소스코드                              
+                            </textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="btn-area jc-end">
+                                                    <button type="button" class="btn btn-dark">
+                                                        <i class="i-branch"></i><span>입력</span>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-wrap type2 mt20">
+                                        <div class="table-header">
+
+                                            <div class="table-title-area">
+                                                <div class="btn-area right">
+                                                    <button type="button" class="btn btn-icon btn-default">
+                                                        <i class="i-max"></i>
+                                                        <span class="hidden">버튼</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="table-body">
+
+                                            <div class="table-inner bd0">
+                                                <div class="gridlist_table">
+                                                    <div id="grid3_2"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="table-wrap type2 mt20">
+                                </section>
+
+                                <!-- 오류 내용 -->
+                                <section class="popTabs-conitem tabpop-idx_2" style="display: none;">
+                                    <div class="title-area mt40 mb20">
+                                        <h4 class="title-h3">오류 내용</h4>
+                                    </div>
+                                    <div class="text-box-wrap">
+
+                                        <div class="text-box">
+                                            <div id="" class="tab-content_tiem">
+
+
+                                                <div class="inner pd0 scroll-type scroll-sm h100">
+                                                    오류내용 노출
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+
+
+                            </div>
+                            <div class="pop-foot">
+                                <div class="btn-area jc-end">
+                                    <button type="button" class="btn btn-dark"><i class="i-play2"></i><span>재전송</span></button>
+                                    <button type="button" class="btn btn-primary"><i class="i-save"></i><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function() {
+                var popup_default1 = $(".js-popup_default1").trpLayerFixedPopup("#popup_default1-wrap");
+                // 팝업 열기
+                $(popup_default1.getBtn).on("click", function($e) {
+                    $(".trp.popupfixed-wrap").appendTo("body");
+                    $e.preventDefault();
+                    popup_default1.open(this); // or false 
+                    toastGrid_reload();
+                });
+                // 팝업 닫기
+                $("body").on("click", "#popup_default1-wrap .js-closepop, #popup_default1-wrap .popup-dim", function($e) {
+                    $e.preventDefault();
+                    popup_default1.close();
+                });
+
+                /* 테이블 갱신 */
+                $(".js-topTabs").on("click", function($e) {
+                    toastGrid_reload()
+                })
+
+            })();
+        </script>
+
+        <!-- toast grid -->
+        <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+        <script type="text/javascript" src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+        <script>
+            var grid2Data = [{
+                    id: '1',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+                {
+                    id: '2',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+                {
+                    id: '3',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+                {
+                    id: '4',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+                {
+                    id: '5',
+                    field_en: 'strd_tlgr_vrsn',
+                    field_kr: '전문길이',
+                    type: 'Number',
+                    length: '100',
+                    input: '-',
+                },
+
+            ];
+            var grid2_1 = new tui.Grid({
+                el: document.getElementById('grid2_1'),
+                data: grid2Data,
+                rowHeight: 50,
+                scrollX: false,
+                scrollY: false,
+                //rowHeaders: ['rowNum'], // 좌측 넘버추가
+                //minBodyHeight: 30,
+                /* pageOptions: {
+                  useClient: true,
+                  perPage: 4
+                }, */
+                columns: [{
+                        header: '번호',
+                        name: 'id',
+                        align: "center",
+                        width: 80,
+                    },
+                    {
+                        header: '필드 명(영문)',
+                        name: 'field_en'
+                    },
+                    {
+                        header: '필드 명(한글)',
+                        name: 'field_kr'
+                    },
+                    {
+                        header: '유형',
+                        name: 'type',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '길이',
+                        name: 'length',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '입력',
+                        name: 'input',
+                        align: "center",
+                        width: 120,
+                    },
+                ]
+            });
+            var grid2_2 = new tui.Grid({
+                el: document.getElementById('grid2_2'),
+                data: grid2Data,
+                rowHeight: 50,
+                scrollX: false,
+                scrollY: false,
+                columns: [{
+                        header: '번호',
+                        name: 'id',
+                        align: "center",
+                        width: 80,
+                    },
+                    {
+                        header: '필드 명(영문)',
+                        name: 'field_en'
+                    },
+                    {
+                        header: '필드 명(한글)',
+                        name: 'field_kr'
+                    },
+                    {
+                        header: '유형',
+                        name: 'type',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '길이',
+                        name: 'length',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '입력',
+                        name: 'input',
+                        align: "center",
+                        width: 120,
+                    },
+                ]
+            });
+
+            var grid3_1 = new tui.Grid({
+                el: document.getElementById('grid3_1'),
+                data: grid2Data,
+                rowHeight: 50,
+                scrollX: false,
+                scrollY: false,
+                //rowHeaders: ['rowNum'], // 좌측 넘버추가
+                //minBodyHeight: 30,
+                /* pageOptions: {
+                  useClient: true,
+                  perPage: 4
+                }, */
+                columns: [{
+                        header: '번호',
+                        name: 'id',
+                        align: "center",
+                        width: 80,
+                    },
+                    {
+                        header: '필드 명(영문)',
+                        name: 'field_en'
+                    },
+                    {
+                        header: '필드 명(한글)',
+                        name: 'field_kr'
+                    },
+                    {
+                        header: '유형',
+                        name: 'type',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '길이',
+                        name: 'length',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '입력',
+                        name: 'input',
+                        align: "center",
+                        width: 120,
+                    },
+                ]
+            });
+            var grid3_2 = new tui.Grid({
+                el: document.getElementById('grid3_2'),
+                data: grid2Data,
+                rowHeight: 50,
+                scrollX: false,
+                scrollY: false,
+                columns: [{
+                        header: '번호',
+                        name: 'id',
+                        align: "center",
+                        width: 80,
+                    },
+                    {
+                        header: '필드 명(영문)',
+                        name: 'field_en'
+                    },
+                    {
+                        header: '필드 명(한글)',
+                        name: 'field_kr'
+                    },
+                    {
+                        header: '유형',
+                        name: 'type',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '길이',
+                        name: 'length',
+                        align: "center",
+                        width: 120,
+                    },
+                    {
+                        header: '입력',
+                        name: 'input',
+                        align: "center",
+                        width: 120,
+                    },
+                ]
+            });
+
+            function toastGrid_reload() {
+                grid2_1.refreshLayout();
+                grid2_2.refreshLayout();
+                grid3_1.refreshLayout();
+                grid3_2.refreshLayout();
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

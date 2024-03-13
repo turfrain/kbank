@@ -4,7 +4,7 @@
 <head>
     <!-- header -->
     <meta charset="UTF-8">
-    <title>IIS 응답 거래</title>
+    <title>서버 정보 등록 팝업</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
     <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
@@ -93,7 +93,7 @@
                     <div class="page-title-wrap">
 
                         <div class="inner">
-                            <h2 class="title"><span>IIS 응답 거래</span></h2>
+                            <h2 class="title"><span>시스템 관리</span></h2>
                         </div>
 
                     </div>
@@ -105,7 +105,7 @@
                     <div class="contents-inner">
                         <div class="content-box">
 
-                            <a href="#" class="btn btn-dark js-popup_default_alert1-btn"><span>IIS 응답 거래 시뮬레이션 정보 내보내기</span></a>
+                            <a href="#" class="btn btn-dark js-popup_default_alert1-btn"><span>IIS 서버 정보 등록</span></a>
 
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                     <div class="pop-panel">
                         <div class="pop-head">
                             <a class="btn_close icon-pop_colse_24 js-closepop" href="#">X</a>
-                            <div class="pop_tit">IIS 응답 거래 시뮬레이션 정보 내보내기</div>
+                            <div class="pop_tit">IIS 서버 정보 등록</div>
                         </div>
                         <div class="pop-body">
                             <section class="section">
@@ -151,35 +151,84 @@
                                                 <tbody>
                                                     <tr>
                                                         <th>
-                                                            <span>파일명</span>
+                                                            <span>서버 유형</span>
+                                                            <em class="require ml5"><span class="hidden">필수</span></em>
                                                         </th>
                                                         <td>
-                                                            <div class="input-box">
-                                                                <input type="text" id="inp02" class="inp" value="" placeholder="파일명 입력">
+                                                            <div class="select-box">
+                                                                <select class="" id="">
+                                                                    <option value="1" selected="" disabled="">선택</option>
+                                                                    <option value="2">전 처리기 데몬</option>
+                                                                    <option value="3">AP</option>
+                                                                </select>
+                                                                <i class="arrow"></i>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <th>
-                                                            <span>파일 종류</span>
+                                                            <span>인터페이스 시스템</span>
                                                         </th>
                                                         <td>
-                                                            <div class="form_set h40">
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-1" name="radiobox1" checked="" class="radiobox">
-                                                                    <label for="radiobox1-1"><span>JSON</span></label>
-                                                                </div>
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-2" name="radiobox1" class="radiobox">
-                                                                    <label for="radiobox1-2"><span>XML</span></label>
-                                                                </div>
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-3" name="radiobox1" class="radiobox">
-                                                                    <label for="radiobox1-3"><span>JsEXCEL</span></label>
-                                                                </div>
+                                                            <div class="select-box">
+                                                                <select class="" id="">
+                                                                    <option value="1" selected="" disabled="">선택</option>
+                                                                    <option value="2">EAI</option>
+                                                                    <option value="3">MCI</option>
+                                                                    <option value="4">FEP</option>
+                                                                </select>
+                                                                <i class="arrow"></i>
                                                             </div>
                                                         </td>
                                                     </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>IP</span>
+                                                            <em class="require ml5"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="" class="inp" value="" placeholder="txt">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>PORT</span>
+                                                            <em class="require ml5"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="" class="inp" value="" placeholder="txt">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>서버 구분</span>
+                                                        </th>
+                                                        <td>
+                                                            <div class="select-box">
+                                                                <select class="" id="">
+                                                                    <option value="1" selected="" disabled="">선택</option>
+                                                                    <option value="2">개발</option>
+                                                                    <option value="3">스테이징</option>
+                                                                </select>
+                                                                <i class="arrow"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>프로토콜</span>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="" class="inp" value="http(Only)" placeholder="txt" disabled>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
 
                                                 </tbody>
                                             </table>
@@ -188,12 +237,14 @@
                                     </div>
                                 </div>
 
+
                             </section>
                         </div>
                         <div class="pop-foot">
 
                             <div class="btn-area jc-end">
-                                <button type="button" class="btn btn-primary"><i class="icon-export_16"></i><span>내보내기</span></button>
+                                <button type="button" class="btn btn-dark"><i class="i-trash"></i> <span class="">삭제</span></button>
+                                <button type="button" class="btn btn-primary"><i class="i-save"></i><span>wjwkd</span></button>
                             </div>
 
                         </div>
@@ -203,18 +254,7 @@
             </div>
         </div>
     </div>
-
     <script>
-        var popup_msg_alert1 = $(".js-popup_msg_alert1-btn").trpLayerFixedPopup("#popup_msg_alert1-wrap");
-        $(popup_msg_alert1.getBtn).on("click", function($e) {
-            $e.preventDefault();
-            popup_msg_alert1.open(this); // or false   
-        });
-        $("body").on("click", "#popup_msg_alert1-wrap .js-closepop, #popup_msg_alert1-wrap .popup-dim", function($e) {
-            $e.preventDefault();
-            popup_msg_alert1.close();
-        });
-
         var popup_default_alert1 = $(".js-popup_default_alert1-btn").trpLayerFixedPopup("#popup_default_alert1-wrap");
         $(popup_default_alert1.getBtn).on("click", function($e) {
             $e.preventDefault();

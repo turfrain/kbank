@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sample_bxslider</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
+    <link rel="stylesheet" href="/resources/static/css/common_pub.min.css">
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+
+    <!--   -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+    <script type="text/javascript" src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+    <script type="text/javascript" src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+    <!-- <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.js"></script> -->
+
+</head>
+
+<body class="trp-sample">
+    <div id="grid"></div>
+    <!-- <div id="tui-pagination-container" class="tui-pagination"></div> -->
+    <script>
+        const gridData = [{
+                id: '10012',
+                city: 'Seoul',
+                country: 'South Korea'
+            },
+            {
+                id: '10013',
+                city: 'Tokyo',
+                country: 'Japan'
+            },
+            {
+                id: '10014',
+                city: 'London',
+                country: 'England'
+            },
+            {
+                id: '10015',
+                city: 'Ljubljana',
+                country: 'Slovenia'
+            },
+            {
+                id: '10016',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+            {
+                id: '10017',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+            {
+                id: '10018',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+
+
+            {
+                id: '10012',
+                city: 'Seoul',
+                country: 'South Korea'
+            },
+            {
+                id: '10013',
+                city: 'Tokyo',
+                country: 'Japan'
+            },
+            {
+                id: '10014',
+                city: 'London',
+                country: 'England'
+            },
+            {
+                id: '10015',
+                city: 'Ljubljana',
+                country: 'Slovenia'
+            },
+            {
+                id: '10016',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+            {
+                id: '10017',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            },
+            {
+                id: '10018',
+                city: 'Reykjavik',
+                country: 'Iceland'
+            }
+        ];
+        const grid = new tui.Grid({
+            el: document.getElementById('grid'),
+            data: gridData,
+            scrollX: false,
+            scrollY: false,
+            rowHeaders: ['rowNum'], // 좌측 넘버추가
+            //minBodyHeight: 30,
+            pageOptions: {
+                useClient: true,
+                perPage: 5
+            },
+            columns: [{
+                    header: 'id',
+                    name: 'id'
+                },
+                {
+                    header: 'city',
+                    name: 'city'
+                },
+                {
+                    header: 'country',
+                    name: 'country',
+                    align: "center",
+                    width: 350,
+                    whiteSpace: 'normal',
+                    formatter: function(e) {
+                        return '<strong>' + e.value + ' HI</strong> <button class="btn btn_default btn_sm" type="button"><span>Button 버튼 H35</span></button>';
+                    },
+                },
+            ]
+        });
+
+
+        /*     const grid = new tui.Grid({
+              el: document.getElementById('grid'),
+              data: gridData,
+              scrollX: false,
+              scrollY: false,
+              minBodyHeight: 30,
+              rowHeaders: ['rowNum'],
+              pagination:true,
+              pageOptions: {
+                perPage: 5
+              },
+              columns: [
+                {
+                  header: 'id',
+                  name: 'id'
+                },
+                {
+                  header: 'city',
+                  name: 'city'
+                },
+                {
+                  header: 'country',
+                  name: 'country'
+                },
+              ]
+            }); */
+    </script>
+
+
+</body>
+
+</html>

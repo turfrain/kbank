@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>23. Client Pagination</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./css/tui-example-style.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../dist/tui-grid.css">
+    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.pagination/v3.4.0/tui-pagination.css"> -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.pagination/v3.4.0/tui-pagination.css">
+    <!-- <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" /> -->
+    <style>
+        .btn-wrapper {
+            margin-bottom: 10px;
+        }
+    </style>
+    <!-- <script>var errorLogs=[];window.onerror=function(o,r,e,n){errorLogs.push({message:o,source:r,lineno:e,colno:n})};</script> -->
+    <script>
+        'use strict';
+
+        var grid = new tui.Grid({
+            el: document.getElementById('grid'),
+            data: gridData,
+            columns: [{
+                header: 'Name',
+                name: 'name'
+            }, {
+                header: 'Artist',
+                name: 'artist'
+            }, {
+                header: 'Type',
+                name: 'type'
+            }, {
+                header: 'Release',
+                name: 'release'
+            }, {
+                header: 'Genre',
+                name: 'genre'
+            }],
+            rowHeaders: ['rowNum'],
+            pageOptions: {
+                useClient: true,
+                perPage: 5
+            }
+        });
+
+        var appendBtn = document.getElementById('appendBtn');
+        var prependBtn = document.getElementById('prependBtn');
+
+        var appendedData = {
+            name: 'Music',
+            artist: 'Lee',
+            type: 'Deluxe',
+            release: '2019.09.09',
+            genre: 'Pop'
+        };
+
+        appendBtn.addEventListener('click', function() {
+            grid.appendRow(appendedData);
+        });
+
+        prependBtn.addEventListener('click', function() {
+            grid.prependRow(appendedData);
+        });
+        //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwibmFtZXMiOlsiZ3JpZCIsInR1aSIsIkdyaWQiLCJlbCIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiLCJkYXRhIiwiZ3JpZERhdGEiLCJjb2x1bW5zIiwiaGVhZGVyIiwibmFtZSIsInJvd0hlYWRlcnMiLCJwYWdlT3B0aW9ucyIsInVzZUNsaWVudCIsInBlclBhZ2UiLCJhcHBlbmRCdG4iLCJwcmVwZW5kQnRuIiwiYXBwZW5kZWREYXRhIiwiYXJ0aXN0IiwidHlwZSIsInJlbGVhc2UiLCJnZW5yZSIsImFkZEV2ZW50TGlzdGVuZXIiLCJhcHBlbmRSb3ciLCJwcmVwZW5kUm93Il0sIm1hcHBpbmdzIjoiOztBQUNJLElBQU1BLE9BQU8sSUFBSUMsSUFBSUMsSUFBUixDQUFhO0FBQ3hCQyxNQUFJQyxTQUFTQyxjQUFULENBQXdCLE1BQXhCLENBRG9CO0FBRXhCQyxRQUFNQyxRQUZrQjtBQUd4QkMsV0FBUyxDQUNQO0FBQ0VDLFlBQVEsTUFEVjtBQUVFQyxVQUFNO0FBRlIsR0FETyxFQUtQO0FBQ0VELFlBQVEsUUFEVjtBQUVFQyxVQUFNO0FBRlIsR0FMTyxFQVNQO0FBQ0VELFlBQVEsTUFEVjtBQUVFQyxVQUFNO0FBRlIsR0FUTyxFQWFQO0FBQ0VELFlBQVEsU0FEVjtBQUVFQyxVQUFNO0FBRlIsR0FiTyxFQWlCUDtBQUNFRCxZQUFRLE9BRFY7QUFFRUMsVUFBTTtBQUZSLEdBakJPLENBSGU7QUF5QnhCQyxjQUFZLENBQUMsUUFBRCxDQXpCWTtBQTBCeEJDLGVBQWE7QUFDWEMsZUFBVyxJQURBO0FBRVhDLGFBQVM7QUFGRTtBQTFCVyxDQUFiLENBQWI7O0FBZ0NBLElBQU1DLFlBQVlYLFNBQVNDLGNBQVQsQ0FBd0IsV0FBeEIsQ0FBbEI7QUFDQSxJQUFNVyxhQUFhWixTQUFTQyxjQUFULENBQXdCLFlBQXhCLENBQW5COztBQUVBLElBQU1ZLGVBQWU7QUFDbkJQLFFBQU0sT0FEYTtBQUVuQlEsVUFBUSxLQUZXO0FBR25CQyxRQUFNLFFBSGE7QUFJbkJDLFdBQVMsWUFKVTtBQUtuQkMsU0FBTztBQUxZLENBQXJCOztBQVFBTixVQUFVTyxnQkFBVixDQUEyQixPQUEzQixFQUFvQyxZQUFNO0FBQ3hDdEIsT0FBS3VCLFNBQUwsQ0FBZU4sWUFBZjtBQUNELENBRkQ7O0FBSUFELFdBQVdNLGdCQUFYLENBQTRCLE9BQTVCLEVBQXFDLFlBQU07QUFDekN0QixPQUFLd0IsVUFBTCxDQUFnQlAsWUFBaEI7QUFDRCxDQUZEIiwiZmlsZSI6IklubGluZSBCYWJlbCBzY3JpcHQiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICBjb25zdCBncmlkID0gbmV3IHR1aS5HcmlkKHtcbiAgICAgIGVsOiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZ3JpZCcpLFxuICAgICAgZGF0YTogZ3JpZERhdGEsXG4gICAgICBjb2x1bW5zOiBbXG4gICAgICAgIHtcbiAgICAgICAgICBoZWFkZXI6ICdOYW1lJyxcbiAgICAgICAgICBuYW1lOiAnbmFtZSdcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGhlYWRlcjogJ0FydGlzdCcsXG4gICAgICAgICAgbmFtZTogJ2FydGlzdCdcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGhlYWRlcjogJ1R5cGUnLFxuICAgICAgICAgIG5hbWU6ICd0eXBlJ1xuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaGVhZGVyOiAnUmVsZWFzZScsXG4gICAgICAgICAgbmFtZTogJ3JlbGVhc2UnXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBoZWFkZXI6ICdHZW5yZScsXG4gICAgICAgICAgbmFtZTogJ2dlbnJlJ1xuICAgICAgICB9XG4gICAgICBdLFxuICAgICAgcm93SGVhZGVyczogWydyb3dOdW0nXSxcbiAgICAgIHBhZ2VPcHRpb25zOiB7XG4gICAgICAgIHVzZUNsaWVudDogdHJ1ZSxcbiAgICAgICAgcGVyUGFnZTogNVxuICAgICAgfVxuICAgIH0pO1xuXG4gICAgY29uc3QgYXBwZW5kQnRuID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FwcGVuZEJ0bicpO1xuICAgIGNvbnN0IHByZXBlbmRCdG4gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncHJlcGVuZEJ0bicpO1xuXG4gICAgY29uc3QgYXBwZW5kZWREYXRhID0ge1xuICAgICAgbmFtZTogJ011c2ljJyxcbiAgICAgIGFydGlzdDogJ0xlZScsXG4gICAgICB0eXBlOiAnRGVsdXhlJyxcbiAgICAgIHJlbGVhc2U6ICcyMDE5LjA5LjA5JyxcbiAgICAgIGdlbnJlOiAnUG9wJ1xuICAgIH07XG5cbiAgICBhcHBlbmRCdG4uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAoKSA9PiB7XG4gICAgICBncmlkLmFwcGVuZFJvdyhhcHBlbmRlZERhdGEpO1xuICAgIH0pO1xuXG4gICAgcHJlcGVuZEJ0bi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHtcbiAgICAgIGdyaWQucHJlcGVuZFJvdyhhcHBlbmRlZERhdGEpO1xuICAgIH0pO1xuICAiXX0=
+    </script>
+    <style type="text/css" id="tui-grid-theme-style">
+        .tui-grid-border-line-top {
+            border-top: 1px solid #aaa
+        }
+
+        .tui-grid-no-scroll-x .tui-grid-border-line-bottom {
+            border-bottom: 1px solid #aaa
+        }
+
+        .tui-grid-frozen-border {
+            background-color: #aaa
+        }
+
+        .tui-grid-container ::-webkit-scrollbar {
+            background-color: #fff
+        }
+
+        .tui-grid-container ::-webkit-scrollbar-thumb {
+            background-color: #ddd
+        }
+
+        .tui-grid-container ::-webkit-scrollbar-thumb:hover {
+            background-color: #ddd
+        }
+
+        .tui-grid-container {
+            scrollbar-3dlight-color: #fff;
+            scrollbar-darkshadow-color: #fff;
+            scrollbar-track-color: #fff;
+            scrollbar-shadow-color: #fff;
+            scrollbar-face-color: #ddd;
+            scrollbar-highlight-color: #ddd;
+            scrollbar-arrow-color: #ddd
+        }
+
+        .tui-grid-border-line-bottom {
+            border-bottom: 1px solid #eee
+        }
+
+        .tui-grid-content-area {
+            border-color: #eee
+        }
+
+        .tui-grid-scrollbar-y-inner-border {
+            background-color: #eee
+        }
+
+        .tui-grid-scrollbar-y-outer-border {
+            background-color: #eee
+        }
+
+        .tui-grid-scrollbar-right-top {
+            background-color: #f9f9f9;
+            border-color: #eee
+        }
+
+        .tui-grid-scrollbar-right-bottom {
+            background-color: #f9f9f9;
+            border-color: #eee
+        }
+
+        .tui-grid-scrollbar-left-bottom {
+            background-color: #f9f9f9;
+            border-color: #eee
+        }
+
+        .tui-grid-scrollbar-frozen-border {
+            background-color: #f9f9f9;
+            border-color: #eee
+        }
+
+        .tui-grid-height-resize-handle {
+            background-color: #fff;
+            border-color: #fff
+        }
+
+        .tui-grid-pagination {
+            background-color: transparent;
+            border-color: transparent
+        }
+
+        .tui-grid-layer-selection {
+            background-color: #00A9ff;
+            border-color: #00a9ff
+        }
+
+        .tui-grid-header-area {
+            background-color: #fff;
+            border-color: #ccc
+        }
+
+        .tui-grid-body-area {
+            background-color: #fff
+        }
+
+        .tui-grid-summary-area {
+            background-color: #fff;
+            border-color: #eee
+        }
+
+        .tui-grid-has-summary-top .tui-grid-body-area {
+            border-color: #eee
+        }
+
+        .tui-grid-cell {
+            background-color: #f4f4f4;
+            border-color: #eee;
+            border-left-width: 0;
+            border-right-width: 0;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            color: #333
+        }
+
+        .tui-grid-cell-editable {
+            background-color: #fff
+        }
+
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table {
+            border-right-style: solid
+        }
+
+        .tui-grid-cell-header {
+            background-color: #fff;
+            border-color: #eee;
+            border-left-width: 1px;
+            border-right-width: 1px;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            color: #222
+        }
+
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-body-area .tui-grid-table {
+            border-right-style: hidden
+        }
+
+        .tui-grid-cell-row-header {
+            background-color: #fff;
+            border-color: #eee;
+            border-left-width: 0;
+            border-right-width: 0;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            color: #333
+        }
+
+        .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-summary-area .tui-grid-table {
+            border-right-style: hidden
+        }
+
+        .tui-grid-cell-summary {
+            background-color: #fff;
+            border-color: #eee;
+            border-left-width: 0;
+            border-right-width: 0;
+            color: #333
+        }
+
+        .tui-grid-cell-required {
+            background-color: #fffdeb
+        }
+
+        .tui-grid-cell-disabled {
+            background-color: #f9f9f9;
+            color: #c1c1c1
+        }
+
+        .tui-grid-cell-invalid.tui-grid-cell {
+            background-color: #ffe5e5
+        }
+
+        .tui-grid-cell-header.tui-grid-cell-selected {
+            background-color: #e5f6ff
+        }
+
+        .tui-grid-cell-row-header.tui-grid-cell-selected {
+            background-color: #e5f6ff
+        }
+
+        .tui-grid-layer-focus-border {
+            background-color: #00a9ff
+        }
+
+        .tui-grid-layer-editing {
+            border-color: #00a9ff
+        }
+
+        .tui-grid-layer-focus-deactive .tui-grid-layer-focus-border {
+            background-color: #aaa
+        }
+
+        .tui-grid-cell-dummy {
+            background-color: #fff
+        }
+    </style>
+</head>
+
+<body>
+    <div class="description">
+        You can see the tutorial
+        <a href="https://github.com/nhn/tui.grid/blob/master/packages/toast-ui.grid/docs/en/pagination.md" target="_blank">here</a>
+        <br>
+        <strong>The example code can be slower than your environment because the code is transpiled by babel-standalone in runtime.</strong>
+    </div>
+    <div class="code-html contents">
+        <div class="btn-wrapper">
+            <button id="appendBtn">appendBtn</button>
+            <button id="prependBtn">prependBtn</button>
+        </div>
+        <div id="grid"></div>
+    </div>
+
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script src="https://uicdn.toast.com/tui.pagination/v3.4.0/tui-pagination.js"></script>
+    <script type="text/javascript" src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+
+    <script type="text/babel" class="code-js">
+        const gridData = [
+    {
+        id: '10012',
+        city: 'Seoul',
+        country: 'South Korea'
+    },
+    {
+        id: '10013',
+        city: 'Tokyo',
+        country: 'Japan'    
+    },
+    {
+        id: '10014',
+        city: 'London',
+        country: 'England'
+    },
+    {
+        id: '10015',
+        city: 'Ljubljana',
+        country: 'Slovenia'
+    },
+    {
+        id: '10016',
+        city: 'Reykjavik',
+        country: 'Iceland'
+    },
+    {
+        id: '10017',
+        city: 'Reykjavik',
+        country: 'Iceland'
+    },
+    {
+        id: '10018',
+        city: 'Reykjavik',
+        country: 'Iceland'
+    },
+
+
+    {
+        id: '10012',
+        city: 'Seoul',
+        country: 'South Korea'
+    },
+    {
+        id: '10013',
+        city: 'Tokyo',
+        country: 'Japan'    
+    },
+    {
+        id: '10014',
+        city: 'London',
+        country: 'England'
+    },
+    {
+        id: '10015',
+        city: 'Ljubljana',
+        country: 'Slovenia'
+    },
+    {
+        id: '10016',
+        city: 'Reykjavik',
+        country: 'Iceland'
+    },
+    {
+        id: '10017',
+        city: 'Reykjavik',
+        country: 'Iceland'
+    },
+    {
+        id: '10018',
+        city: 'Reykjavik',
+        country: 'Iceland'
+    }
+    ];
+    const grid = new tui.Grid({
+      el: document.getElementById('grid'),
+      data: gridData,
+      columns: [
+        {
+          header: 'id',
+          name: 'id'
+        },
+        {
+          header: 'city',
+          name: 'city'
+        },
+        {
+          header: 'country',
+          name: 'country'
+        },
+      ],
+      rowHeaders: ['rowNum'],
+      pageOptions: {
+        useClient: true,
+        perPage: 5
+      }
+    });
+
+    const appendBtn = document.getElementById('appendBtn');
+    const prependBtn = document.getElementById('prependBtn');
+
+    const appendedData = {
+      name: 'Music',
+      artist: 'Lee',
+      type: 'Deluxe',
+      release: '2019.09.09',
+      genre: 'Pop'
+    };
+
+    appendBtn.addEventListener('click', () => {
+      grid.appendRow(appendedData);
+    });
+
+    prependBtn.addEventListener('click', () => {
+      grid.prependRow(appendedData);
+    });
+  </script>
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <!-- header -->
     <meta charset="UTF-8">
-    <title>IIS 발신 거래</title>
+    <title>수신 시스템 정보 등록</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
     <link rel="stylesheet" href="/resources/static/css/library/csslibrary.css">
@@ -93,7 +93,7 @@
                     <div class="page-title-wrap">
 
                         <div class="inner">
-                            <h2 class="title"><span>IIS 발신 거래</span></h2>
+                            <h2 class="title"><span>시스템 관리</span></h2>
                         </div>
 
                     </div>
@@ -105,7 +105,7 @@
                     <div class="contents-inner">
                         <div class="content-box">
 
-                            <a href="#" class="btn btn-dark js-popup_default_alert1-btn"><span>대량 거래 테스트 등록</span></a>
+                            <a href="#" class="btn btn-dark js-popup_default_alert1-btn"><span>수신시스템 정보 등록</span></a>
 
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                     <div class="pop-panel">
                         <div class="pop-head">
                             <a class="btn_close icon-pop_colse_24 js-closepop" href="#">X</a>
-                            <div class="pop_tit">대량 거래 테스트 등록</div>
+                            <div class="pop_tit">수신시스템 정보 등록</div>
                         </div>
                         <div class="pop-body">
                             <section class="section">
@@ -151,59 +151,128 @@
                                                 <tbody>
                                                     <tr>
                                                         <th>
-                                                            <span>파일 종류</span>
-                                                            <em class="require ml5"><span class="hidden">필수</span></em>
-                                                        </th>
-                                                        <td>
-                                                            <div class="form_set h40">
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-1" name="radiobox1" checked="" class="radiobox">
-                                                                    <label for="radiobox1-1"><span>JSON</span></label>
-                                                                </div>
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-2" name="radiobox1" class="radiobox">
-                                                                    <label for="radiobox1-2"><span>XML</span></label>
-                                                                </div>
-                                                                <div class="radiobox-wrap inlineblock">
-                                                                    <input type="radio" id="radiobox1-3" name="radiobox1" class="radiobox">
-                                                                    <label for="radiobox1-3"><span>JsEXCEL</span></label>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>
-                                                            <span>파일명</span>
-                                                            <em class="require ml5"><span class="hidden">필수</span></em>
-                                                        </th>
-                                                        <td>
-                                                            <div class="trp file-box">
-                                                                <label for="fileName" class="screen-reader-text">파일첨부</label>
-                                                                <input type="text" id="fileName" class="trp-Filetext" placeholder="첨부파일명.첨부파일확장자 ">
-                                                                <input type="button" class="btn" value="찾아보기">
-                                                                <input type="file" class="trp-Filehidden" onchange="javascript: document.getElementById('fileName').value = this.value" title="Insert Attachment">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>
-                                                            <span>실행 시간</span>
+                                                            <span>수신 대분류</span>
                                                             <em class="require ml5"><span class="hidden">필수</span></em>
                                                         </th>
                                                         <td>
                                                             <div class="select-box">
                                                                 <select class="" id="">
                                                                     <option value="1" selected="" disabled="">선택</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
+                                                                    <option value="2">계정계</option>
+                                                                    <option value="3">정보계</option>
+                                                                    <option value="4">채널계</option>
+                                                                    <option value="5">서브계</option>
+                                                                    <option value="5">마이데이터</option>
                                                                 </select>
                                                                 <i class="arrow"></i>
                                                             </div>
                                                         </td>
                                                     </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>업무 구분</span>
+                                                            <em class="require ml5"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td>
+                                                            <div class="select-box">
+                                                                <select class="" id="">
+                                                                    <option value="1" selected="" disabled="">선택</option>
+                                                                    <option value="2">수신</option>
+                                                                    <option value="3">펌뱅킹 시스템</option>
+                                                                    <option value="4">카드계</option>
+                                                                    <option value="5">...</option>
+                                                                </select>
+                                                                <i class="arrow"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>인터페이스 시스템</span>
+                                                            <em class="require ml5"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td>
+                                                            <div class="select-box">
+                                                                <select class="" id="">
+                                                                    <option value="1" selected="" disabled="">선택</option>
+                                                                    <option value="2">EAI</option>
+                                                                    <option value="3">MCI</option>
+                                                                    <option value="4">FEP</option>
+                                                                </select>
+                                                                <i class="arrow"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>서버 순번</span>
+                                                            <em class="require ml5"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td>
+                                                            <div class="select-box">
+                                                                <select class="" id="">
+                                                                    <option value="" selected="" disabled="">서버 순번</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                </select>
+                                                                <i class="arrow"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>IP 혹은 URL</span>
+                                                            <em class="require ml5"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="" class="inp" value="" placeholder="txt">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>PORT</span>
+                                                            <em class="require ml5"><span class="hidden">필수</span></em>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="" class="inp" value="" placeholder="txt">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>추가 호출 정보</span>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="" class="inp" value="" placeholder="txt">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            <span>프로토콜</span>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box">
+                                                                <input type="text" id="" class="inp" value="http(Only)" placeholder="txt">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
 
+                                                    <tr>
+                                                        <th>
+                                                            <span>서버 설명</span>
+                                                        </th>
+                                                        <td>
+                                                            <div class="input-box" style="height:120px">
+                                                                <textarea class="pd10" name="" id="" cols="30" rows="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
 
                                                 </tbody>
                                             </table>
@@ -218,39 +287,8 @@
                         <div class="pop-foot">
 
                             <div class="btn-area jc-end">
-                                <button type="button" class="btn btn-primary"><i class="i-save"></i><span>등록</span></button>
-                            </div>
-
-                        </div>
-                        <div class="pop-foot">
-
-                            <div class="gray-area pd20">
-
-                                <div class="table-wrap type-gray">
-                                    <div class="table-body">
-
-                                        <div class="table-inner ">
-                                            <table class="table ">
-                                                <colgroup>
-                                                    <col class="" width="20%">
-                                                    <col class="" width="30%">
-                                                    <col class="" width="20%">
-                                                    <col class="" width="30%">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th class="tar "><span class="t_p2">등록 성공</span></th>
-                                                        <td><span class="t_h3 colorDs">7,200</span> <span class="t_p2 colorB">건</span></td>
-                                                        <th class="tar"><span class="t_p2">등록 실패</span></th>
-                                                        <td><span class="t_h3 colorDs">0</span> <span class="t_p2 colorB">건</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                    </div>
-                                </div>
-
+                                <button type="button" class="btn btn-dark"><i class="i-trash"></i> <span class="">삭제</span></button>
+                                <button type="button" class="btn btn-primary"><i class="i-save"></i><span>저장</span></button>
                             </div>
 
                         </div>
